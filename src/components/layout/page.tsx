@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Header from "./header";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import { useRef } from "react";
+import Footer from "./footer";
 
 export default function Page({ children }: { children: any }) {
     const router = useRouter();
@@ -20,9 +21,10 @@ export default function Page({ children }: { children: any }) {
         >
             <Header />
             <div
-                className={`absolute inset-0 w-full h-full pt-[200px] overflow-y-scroll`}
+                className={`absolute inset-0 w-full h-full pt-[100px] overflow-y-scroll`}
             >
                 {children}
+                <Footer />
             </div>
         </motion.div>
     );
