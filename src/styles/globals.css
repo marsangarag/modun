@@ -63,14 +63,10 @@ body {
     -webkit-user-select: none;
     margin: 0;
     font-family: "OpenSans" !important;
-    font-style: medium;
-    font-weight: 400;
-    font-size: 25px !important;
-    line-height: 20px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-padding: 0;
-    @apply font-normal text-base text-black bg-[#F9F9FB] h-screen overflow-hidden;
+    @apply font-normal text-base text-black bg-main h-screen overflow-hidden;
     outline: none;
 }
 
@@ -85,31 +81,17 @@ footer {
 
 /* header burger menu */
 .hamburger {
-    @apply absolute top-1/2 -translate-y-1/2 right-10 hidden;
+    @apply absolute top-1/2 -translate-y-1/2 right-0 hidden;
 }
 
 label {
-    @apply flex flex-col w-12 cursor-pointer;
+    @apply flex flex-col w-8 cursor-pointer;
 }
 
 label span {
-    background: black;
-    border-radius: 10px;
-    height: 7px;
-    margin: 7px 0;
+    @apply bg-black h-[4px] rounded-[10px];
+    margin: 3px 0;
     transition: 0.4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
-}
-
-span:nth-of-type(1) {
-    width: 50%;
-}
-
-span:nth-of-type(2) {
-    width: 100%;
-}
-
-span:nth-of-type(3) {
-    width: 75%;
 }
 
 input[type="checkbox"] {
@@ -118,7 +100,8 @@ input[type="checkbox"] {
 
 input[type="checkbox"]:checked ~ span:nth-of-type(1) {
     transform-origin: bottom;
-    transform: rotatez(45deg) translate(8px, 0px);
+    width: 50%;
+    transform: rotatez(45deg) translate(4px, 1px);
 }
 
 input[type="checkbox"]:checked ~ span:nth-of-type(2) {
@@ -129,14 +112,42 @@ input[type="checkbox"]:checked ~ span:nth-of-type(2) {
 input[type="checkbox"]:checked ~ span:nth-of-type(3) {
     transform-origin: bottom;
     width: 50%;
-    transform: translate(30px, -11px) rotatez(45deg);
+    transform: translate(12.5px, -6px) rotatez(45deg);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
     #header-logo {
         @apply absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2;
     }
     .hamburger {
         @apply block;
     }
+
+    .nav-item {
+        @apply hidden;
+    }
+
+    html,
+    body {
+        font-size: 14px !important;
+    }
+    .text-sm {
+        font-size: 14px !important;
+    }
+    .text-base {
+        font-size: 24px !important;
+    }
+}
+@media screen and (min-width: 900px) {
+    ::-webkit-scrollbar {
+        width: 0 !important;
+        display: none;
+    }
+}
+.nav-item {
+    @apply relative h-full cursor-pointer pb-2.5;
+}
+
+video {
+    clip-path: inset(1px 1px);
 }

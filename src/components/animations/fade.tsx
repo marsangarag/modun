@@ -4,10 +4,12 @@ export default function Fade({
     direction,
     children,
     delay,
+    className,
 }: {
     direction: string;
     children: any;
     delay?: number;
+    className?: string;
 }) {
     const animationDirection: any = {
         left: { x: -500 },
@@ -41,12 +43,14 @@ export default function Fade({
         <motion.div
             variants={animationConfig}
             initial="in"
-            animate="animate"
+            whileInView="animate"
+            viewport={{ once: true }}
             exit="out"
             transition={{
                 duration: 0.5,
                 delay: delay || 0,
             }}
+            className={className}
         >
             {children}
         </motion.div>

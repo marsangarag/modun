@@ -5,5 +5,6 @@ module.exports = {
         defaultLocale: "mn",
         localeDetection: false,
         reloadOnPrerender: true,
+        keySeparator: ".",
     },
 };

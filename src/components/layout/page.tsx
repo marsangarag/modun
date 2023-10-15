@@ -1,14 +1,16 @@
 import { useRouter } from "next/router";
 import Header from "./header";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import Footer from "./footer";
 
 export default function Page({ children }: { children: any }) {
     const router = useRouter();
-    const { scrollY } = useScroll();
+    const containerRef = useRef<null | HTMLDivElement>(null);
+    const [scrollPos, setScrollPos] = useState<number>(0);
+    const { scrollY } = useScroll({ container: containerRef });
 
-    useMotionValueEvent(scrollY, "change", (latest) => console.log(latest));
+    useMotionValueEvent(scrollY, "change", (latest) => setScrollPos(latest));
 
     return (
         <motion.div
@@ -19,8 +21,9 @@ export default function Page({ children }: { children: any }) {
             transition={{ duration: 1 }}
             className="w-screen h-screen relative"
         >
-            <Header />
+            <Header scrollPos={scrollPos} />
             <div
+                ref={containerRef}
                 className={`absolute inset-0 w-full h-full pt-[100px] overflow-y-scroll`}
             >
                 {children}
