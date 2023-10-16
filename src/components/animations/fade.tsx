@@ -12,9 +12,9 @@ export default function Fade({
     className?: string;
 }) {
     const animationDirection: any = {
-        left: { x: -500 },
-        right: { x: 500 },
-        up: { y: 500 },
+        left: { x: -200 },
+        right: { x: 200 },
+        up: { y: 200 },
         none: { x: 0, y: 0 },
     };
 

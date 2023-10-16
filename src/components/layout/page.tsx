@@ -23,6 +23,7 @@ export default function Page({ children }: { children: any }) {
         >
             <Header scrollPos={scrollPos} />
             <div
+                id="scrollable-content"
                 ref={containerRef}
                 className={`absolute inset-0 w-full h-full pt-[100px] overflow-y-scroll`}
             >

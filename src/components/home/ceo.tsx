@@ -25,9 +25,9 @@ export default function Ceo() {
                 </Fade>
             </div>
             <Fade
-                className="relative w-full col-span-2 h-full aspect-[0.66] pt-10 lg:pt-0"
+                className="relative w-full col-span-2 h-full self-start aspect-[0.66]"
                 direction="right"
-                delay={0.2}
+                delay={0.3}
             >
                 <Image src={"/images/ceo.jpg"} alt="modun-ceo" fill />
             </Fade>
