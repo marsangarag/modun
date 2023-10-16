@@ -65,6 +65,7 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                     >
                         <div className="cursor-pointer">
                             <Image
+                                priority={true}
                                 src={"/images/logo.png"}
                                 alt="modun-logo"
                                 width={150}
