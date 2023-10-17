@@ -12,7 +12,7 @@ export default function Home() {
                 autoPlay
                 muted
                 playsInline
-                className="md:-mt-[100px] border-none"
+                className="-mt-20 border-none"
             >
                 <source src="/video/banner-vid.mp4" />
             </video>

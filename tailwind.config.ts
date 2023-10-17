@@ -6,6 +6,7 @@ const config: Config = {
         extend: {
             colors: {
                 main: "#F9F9FB",
+                lightblue: "#d7e0ec",
             },
             fontSize: {
                 sm: "14px",

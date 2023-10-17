@@ -117,7 +117,7 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
 
 @media screen and (max-width: 900px) {
     #header-logo {
-        @apply absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2;
+        @apply absolute left-1/2 -translate-x-1/2 top-0  p-0 !important;
     }
     .hamburger {
         @apply block;
@@ -127,16 +127,10 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
         @apply hidden;
     }
 
-    html,
+    /* html,
     body {
         font-size: 14px !important;
-    }
-    .text-sm {
-        font-size: 14px !important;
-    }
-    .text-base {
-        font-size: 24px !important;
-    }
+    } */
 }
 @media screen and (min-width: 900px) {
     ::-webkit-scrollbar {
@@ -145,7 +139,7 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
     }
 }
 .nav-item {
-    @apply relative h-full cursor-pointer pb-2.5;
+    @apply relative h-full cursor-pointer pb-2;
 }
 
 video {

@@ -25,7 +25,7 @@ export default function Page({ children }: { children: any }) {
             <div
                 id="scrollable-content"
                 ref={containerRef}
-                className={`absolute inset-0 w-full h-full pt-[100px] overflow-y-scroll`}
+                className={`absolute inset-0 w-full h-full pt-20 overflow-y-scroll`}
             >
                 {children}
                 <Footer />
