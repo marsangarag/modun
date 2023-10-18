@@ -3,11 +3,11 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
-import { useTheme } from "next-themes";
+import { useThemeSwitcher } from "@/lib/helper";
 
 export default function Header({ scrollPos }: { scrollPos: number }) {
     const router = useRouter();
-    const { theme, setTheme } = useTheme();
+    const { theme, setTheme } = useThemeSwitcher();
     const { pathname } = router;
     const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false);
     const { t, i18n } = useTranslation("header");
@@ -32,7 +32,7 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
         <>
             <header
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-                    scrollPos > 150
+                    scrollPos > 80
                         ? "h-[100px] background-color"
                         : "h-20 bg-transparent"
                 }`}
@@ -40,14 +40,14 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                 <div className="relative flex pt-2.5 justify-between gap-x-5 xl:gap-x-10 main-width h-full">
                     <motion.div
                         initial={{ paddingTop: 0 }}
-                        animate={{ paddingTop: scrollPos > 150 ? 10 : 0 }}
+                        animate={{ paddingTop: scrollPos > 80 ? 10 : 0 }}
                         className="cursor-pointer"
                         onClick={() => onNavigate("/")}
                         id="header-logo"
                     >
                         <Image
                             priority={true}
-                            src={"/images/logo.png"}
+                            src={`/images/${theme}/logo.png`}
                             alt="modun-logo"
                             width={150}
                             height={80}
@@ -110,7 +110,7 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                     background: { delay: isNavExpanded ? 0 : 0.2 },
                 }}
                 className={`w-screen absolute pt-20 overflow-hidden inset-0 z-40 flex flex-col ${
-                    scrollPos > 150 ? "pt-[100px]" : "pt-20"
+                    scrollPos > 80 ? "pt-[100px]" : "pt-20"
                 }`}
             >
                 <div className="main-width">
@@ -119,7 +119,7 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                             <div
                                 onClick={() => onNavigate(nav.route)}
                                 key={nav.route + nav.title}
-                                className="border-t border-color py-7 text-center"
+                                className="border-t border-color py-7 text-center text-sm"
                             >
                                 <div>{t(`${nav.title}`)}</div>
                             </div>

@@ -21,12 +21,12 @@ export default function Page({ children }: { children: any }) {
             transition={{ duration: 1 }}
             className="w-screen h-screen relative"
         >
-            <Header scrollPos={scrollPos} />
             <div
                 id="scrollable-content"
                 ref={containerRef}
-                className={`absolute inset-0 w-full h-full pt-20 overflow-y-scroll`}
+                className={`absolute inset-0 w-full h-full pt-20 md:pt-0 overflow-y-scroll overflow-x-hidden`}
             >
+                <Header scrollPos={scrollPos} />
                 {children}
                 <Footer />
             </div>

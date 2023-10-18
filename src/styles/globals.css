@@ -16,63 +16,78 @@
     font-style: medium;
 }
 @font-face {
-    font-family: "OpenSans";
-    font-weight: 300;
-    src: local("MyFont"),
-        url(./fonts/OpenSans/OpenSans-Light.ttf) format("truetype");
-    font-style: light;
-}
-@font-face {
-    font-family: "OpenSans";
-    font-weight: 400;
-    src: local("MyFont"),
-        url(./fonts/OpenSans/OpenSans-Regular.ttf) format("truetype");
-}
-
-@font-face {
-    font-family: "OpenSans";
-    font-weight: 500;
-    src: local("MyFont"),
-        url(./fonts/OpenSans/OpenSans-Medium.ttf) format("truetype");
-    font-style: medium;
-}
-@font-face {
-    font-family: "OpenSans";
+    font-family: "Montserrat";
     font-weight: 600;
     src: local("MyFont"),
-        url(./fonts/OpenSans/OpenSans-SemiBold.ttf) format("truetype");
+        url(./fonts/Montserrat/Montserrat-SemiBold.ttf) format("truetype");
     font-style: semibold;
 }
 @font-face {
-    font-family: "OpenSans";
+    font-family: "Montserrat";
     font-weight: 700;
     src: local("MyFont"),
-        url(./fonts/OpenSans/OpenSans-Bold.ttf) format("truetype");
+        url(./fonts/Montserrat/Montserrat-Bold.ttf) format("truetype");
+    font-style: bold;
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 800;
+    src: local("MyFont"),
+        url(./fonts/Montserrat/Montserrat-ExtraBold.ttf) format("truetype");
+    font-style: extrabold;
+}
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 900;
+    src: local("MyFont"),
+        url(./fonts/Montserrat/Montserrat-Black.ttf) format("truetype");
+    font-style: black;
+}
+
+@font-face {
+    font-family: "DMSans";
+    font-weight: 400;
+    src: local("MyFont"),
+        url(./fonts/DMSans/DMSans-Regular.ttf) format("truetype");
+}
+@font-face {
+    font-family: "DMSans";
+    font-weight: 500;
+    src: local("MyFont"),
+        url(./fonts/DMSans/DMSans-Medium.ttf) format("truetype");
+    font-style: medium;
+}
+
+@font-face {
+    font-family: "DMSans";
+    font-weight: 600;
+    src: local("MyFont"),
+        url(./fonts/DMSans/DMSans-SemiBold.ttf) format("truetype");
+    font-style: semibold;
+}
+@font-face {
+    font-family: "DMSans";
+    font-weight: 700;
+    src: local("MyFont"), url(./fonts/DMSans/DMSans-Bold.ttf) format("truetype");
     font-style: bold;
 }
 
-html,
 body {
     text-size-adjust: none !important;
     -webkit-text-size-adjust: none !important;
     -moz-text-size-adjust: none !important;
     -ms-text-size-adjust: none !important;
     -webkit-overflow-scrolling: touch !important;
-    overflow: hidden !important;
+    /* overflow: hidden !important; */
     overscroll-behavior-y: none !important;
     -webkit-user-select: none;
     margin: 0;
-    font-family: "OpenSans" !important;
+    font-family: "Montserrat" !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-padding: 0;
     @apply font-normal text-base text-black dark:text-white transition-colors duration-150 ease-linear background-color h-screen overflow-hidden;
     outline: none;
-}
-
-header,
-footer {
-    font-family: "Montserrat" !important;
 }
 
 * {
@@ -115,9 +130,28 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
     transform: translate(12.5px, -6px) rotatez(45deg);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 850px) {
+    .text-sm {
+        font-size: 16px !important;
+    }
+    .text-base {
+        font-size: 18px !important;
+    }
+    .text-big {
+        font-size: 20px !important;
+    }
+    .text-bigger {
+        font-size: 28px !important;
+    }
+    .text-huge {
+        font-size: 32px !important;
+    }
+    .text-biggest {
+        font-size: 48px !important;
+    }
+
     #header-logo {
-        @apply absolute left-1/2 -translate-x-1/2 top-2.5 !important;
+        @apply absolute  left-1/2  -translate-x-1/2 top-2.5 !important;
     }
     .hamburger {
         @apply block;
@@ -128,14 +162,35 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
     }
 }
 
-@media screen and (min-width: 900px) {
-    ::-webkit-scrollbar {
-        width: 0 !important;
-        display: none;
+@media screen and (min-width: 851px) and (max-width: 1180px) {
+    .text-sm {
+        font-size: 18px !important;
+    }
+    .text-base {
+        font-size: 22px !important;
+    }
+    .text-big {
+        font-size: 28px !important;
+    }
+    .text-bigger {
+        font-size: 32px !important;
+    }
+    .text-huge {
+        font-size: 48px !important;
+    }
+    .text-biggest {
+        font-size: 64px !important;
     }
 }
+
+::-webkit-scrollbar {
+    width: 0 !important;
+    display: none;
+}
+/* @media screen and (min-width: 900px) {
+} */
 .nav-item {
-    @apply relative h-full cursor-pointer pb-2;
+    @apply relative h-full cursor-pointer pb-2 text-sm;
 }
 
 video {
@@ -155,4 +210,21 @@ video {
     .main-width {
         @apply w-5/6 mx-auto;
     }
+    .card-bg {
+        @apply bg-white dark:bg-blue;
+    }
+    .font-dm {
+        font-family: "DMSans" !important;
+    }
+}
+
+.gradient-border {
+    border: 1px solid;
+    border-image-slice: 1;
+    border-width: 1px;
+    border-image-source: linear-gradient(
+        to bottom,
+        rgba(236, 29, 36, 1),
+        rgba(0, 67, 210, 1)
+    );
 }

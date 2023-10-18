@@ -6,19 +6,13 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
     return (
-        <div className="flex flex-col ">
-            <video
-                loop
-                autoPlay
-                muted
-                playsInline
-                className="-mt-20 border-none"
-            >
+        <div className="flex flex-col gap-y-10 md:gap-y-20 xl:gap-y-24">
+            <video loop autoPlay muted playsInline>
                 <source src="/video/banner-vid.mp4" />
             </video>
-            <Ceo />
-            <Slogans />
             <Group />
+            <Slogans />
+            <Ceo />
             <Logos />
         </div>
     );
