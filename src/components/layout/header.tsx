@@ -109,7 +109,7 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                     duration: 0.4,
                     background: { delay: isNavExpanded ? 0 : 0.2 },
                 }}
-                className={`w-screen absolute pt-20 overflow-hidden inset-0 z-40 flex flex-col ${
+                className={`w-screen fixed pt-20 overflow-hidden inset-0 z-40 flex flex-col ${
                     scrollPos > 80 ? "pt-[100px]" : "pt-20"
                 }`}
             >

@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
                 />
             </Head>
             <AnimatePresence mode="wait">
-                <ThemeProvider attribute="class">
+                <ThemeProvider attribute="class" defaultTheme="light">
                     <Page>
                         <Component {...pageProps} />
                     </Page>
