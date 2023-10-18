@@ -1,12 +1,13 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+    darkMode: "class",
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
         extend: {
             colors: {
-                main: "#F9F9FB",
-                lightblue: "#d7e0ec",
+                lightblue: "#C7F4FE",
+                blue: "#0043D2",
             },
             fontSize: {
                 sm: "14px",

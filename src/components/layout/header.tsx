@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
+import { useTheme } from "next-themes";
 
 export default function Header({ scrollPos }: { scrollPos: number }) {
     const router = useRouter();
+    const { theme, setTheme } = useTheme();
     const { pathname } = router;
     const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false);
     const { t, i18n } = useTranslation("header");
@@ -18,31 +20,27 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
     ];
 
     const onNavigate = (route: string) => {
+        setIsNavExpanded(false);
         router.push(route);
     };
 
-    const onChangeLanguage = () => {};
+    const onChangeLanguage = () => {
+        setTheme(theme === "light" ? "dark" : "light");
+    };
 
     return (
         <>
-            <motion.header
-                initial={{
-                    background: "rgba(249, 249, 251, 0)",
-                    height: "80px",
-                }}
-                animate={{
-                    background:
-                        scrollPos > 150
-                            ? "rgba(249, 249, 251, 1)"
-                            : "rgba(249, 249, 251, 0)",
-                    height: scrollPos > 150 ? "100px" : "80px",
-                }}
-                className="fixed top-0 left-0 w-full z-50 px-10"
+            <header
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+                    scrollPos > 150
+                        ? "h-[100px] background-color"
+                        : "h-20 bg-transparent"
+                }`}
             >
-                <div className="relative flex  justify-between gap-x-5 xl:gap-x-10 w-full h-full">
+                <div className="relative flex pt-2.5 justify-between gap-x-5 xl:gap-x-10 main-width h-full">
                     <motion.div
-                        initial={{ paddingTop: 10 }}
-                        animate={{ paddingTop: scrollPos > 150 ? 20 : 10 }}
+                        initial={{ paddingTop: 0 }}
+                        animate={{ paddingTop: scrollPos > 150 ? 10 : 0 }}
                         className="cursor-pointer"
                         onClick={() => onNavigate("/")}
                         id="header-logo"
@@ -75,13 +73,16 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                                 <div
                                     onClick={() => onNavigate(nav.route)}
                                     key={nav.title}
-                                    className="nav-item group"
+                                    className={`nav-item group ${
+                                        pathname === nav.route
+                                            ? "font-bold"
+                                            : ""
+                                    }`}
                                 >
                                     <div>{t(`${nav.title}`).toUpperCase()}</div>
-                                    <div className="group-hover:w-full w-0 transition-[width] h-0.5 bg-black rounded-sm absolute left-0 bottom-0"></div>
-                                    {pathname === nav.route ? (
-                                        <div className=" w-full transition-[width] h-0.5 bg-red-500 rounded-sm absolute left-0 bottom-0"></div>
-                                    ) : null}
+                                    {pathname === nav.route ? null : (
+                                        <div className="group-hover:w-full w-0 transition-[width] h-0.5 bg-black dark:bg-white rounded-sm absolute left-0 bottom-0"></div>
+                                    )}
                                 </div>
                             );
                         })}
@@ -93,29 +94,38 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                         </div>
                     </div>
                 </div>
-            </motion.header>
+            </header>
             <motion.div
-                initial={{ height: 0, background: "rgba(249, 249, 251, 0)" }}
+                initial={{ height: 0, background: "rgba(0,0,0,0)" }}
                 animate={{
                     height: isNavExpanded ? "100vh" : 0,
                     background: isNavExpanded
-                        ? "rgba(249, 249, 251, 1)"
-                        : "rgba(249, 249, 251, 0)",
+                        ? theme === "light"
+                            ? "rgba(256,256,256,1)"
+                            : "rgba(0,0,0,1)"
+                        : "rgba(0,0,0,0)",
                 }}
-                transition={{ duration: 0.4 }}
-                className="w-screen px-10 absolute pt-[100px] overflow-hidden inset-0 z-40 flex flex-col"
+                transition={{
+                    duration: 0.4,
+                    background: { delay: isNavExpanded ? 0 : 0.2 },
+                }}
+                className={`w-screen absolute pt-20 overflow-hidden inset-0 z-40 flex flex-col ${
+                    scrollPos > 150 ? "pt-[100px]" : "pt-20"
+                }`}
             >
-                {navItems.map((nav) => {
-                    return (
-                        <div
-                            onClick={() => onNavigate(nav.route)}
-                            key={nav.route + nav.title}
-                            className="border-t-2 border-gray py-7 text-center"
-                        >
-                            <div>{t(`${nav.title}`)}</div>
-                        </div>
-                    );
-                })}
+                <div className="main-width">
+                    {navItems.map((nav) => {
+                        return (
+                            <div
+                                onClick={() => onNavigate(nav.route)}
+                                key={nav.route + nav.title}
+                                className="border-t border-color py-7 text-center"
+                            >
+                                <div>{t(`${nav.title}`)}</div>
+                            </div>
+                        );
+                    })}
+                </div>
             </motion.div>
         </>
     );
