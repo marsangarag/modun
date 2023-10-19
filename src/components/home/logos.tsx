@@ -1,15 +1,27 @@
-import Fade from "../animations/fade";
+import { useRef } from "react";
 import Logo from "./logo";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 export default function Logos() {
+    const targetRef = useRef<null | HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+    });
+
+    const x = useTransform(scrollYProgress, [0, 1], ["3%", "-95%"]);
+
     return (
-        <Fade
-            direction="up"
-            className="md:w-2/3 pt-20 grid grid-cols-4 mx-auto w-full px-5"
+        <section
+            ref={targetRef}
+            className="relative w-screen h-[300vh] my-[-200px]"
         >
-            {Array.from({ length: 8 }).map((_: any, index: number) => {
-                return <Logo key={index} index={index} />;
-            })}
-        </Fade>
+            <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+                <motion.div style={{ x }} className="flex gap-4">
+                    {Array.from({ length: 8 }).map((_: any, index: number) => {
+                        return <Logo key={index} index={index} />;
+                    })}
+                </motion.div>
+            </div>
+        </section>
     );
 }

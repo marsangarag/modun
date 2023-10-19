@@ -31,7 +31,7 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+                className={`fixed top-0 left-0 w-full z-50 transition-all ${
                     scrollPos > 80
                         ? "h-[100px] background-color"
                         : "h-20 bg-transparent"
@@ -79,7 +79,7 @@ export default function Header({ scrollPos }: { scrollPos: number }) {
                                             : ""
                                     }`}
                                 >
-                                    <div>{t(`${nav.title}`).toUpperCase()}</div>
+                                    <div>{t(`${nav.title}`)}</div>
                                     {pathname === nav.route ? null : (
                                         <div className="group-hover:w-full w-0 transition-[width] h-0.5 bg-black dark:bg-white rounded-sm absolute left-0 bottom-0"></div>
                                     )}

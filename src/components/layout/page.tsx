@@ -6,9 +6,8 @@ import Footer from "./footer";
 
 export default function Page({ children }: { children: any }) {
     const router = useRouter();
-    const containerRef = useRef<null | HTMLDivElement>(null);
     const [scrollPos, setScrollPos] = useState<number>(0);
-    const { scrollY } = useScroll({ container: containerRef });
+    const { scrollY } = useScroll();
 
     useMotionValueEvent(scrollY, "change", (latest) => setScrollPos(latest));
 
@@ -19,14 +18,12 @@ export default function Page({ children }: { children: any }) {
             exit={{ opacity: 0 }}
             key={router.pathname}
             transition={{ duration: 1 }}
-            className="w-screen h-screen relative"
+            className="w-screen min-h-screen relative"
         >
+            <Header scrollPos={scrollPos} />
             <div
-                id="scrollable-content"
-                ref={containerRef}
-                className={`absolute inset-0 w-full h-full pt-20 md:pt-0 overflow-y-scroll overflow-x-hidden`}
+                className={`pt-20 md:pt-0 overflow-y-scroll overflow-x-hidden`}
             >
-                <Header scrollPos={scrollPos} />
                 {children}
                 <Footer />
             </div>

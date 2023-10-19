@@ -86,7 +86,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-padding: 0;
-    @apply font-normal text-base text-black dark:text-white transition-colors duration-150 ease-linear background-color h-screen overflow-hidden;
+    @apply font-normal text-base text-black dark:text-white transition-all duration-150 ease-linear background-color overflow-y-scroll;
     outline: none;
 }
 
