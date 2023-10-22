@@ -12,12 +12,12 @@ export default function BusinessBranch({ data }: { data: NewsCardType }) {
     return (
         <div className="my-col-10 md:gap-y-24">
             <PageTitle
-                title={t(`${data.img}.title`)}
-                subtitle={t(`${data.img}.slogan`)}
+                title={t(`${data?.img}.title`)}
+                subtitle={t(`${data?.img}.slogan`)}
             />
             <BranchCard data={data} />
             <div className="py-14 md:py-48">
-                <Businesses less={data.img} />
+                <Businesses less={data?.img} />
             </div>
         </div>
     );

@@ -17,7 +17,7 @@ export default function Businesses({ less }: { less?: string }) {
             <div className="my-col-20 md:flex-row justify-between flex-wrap">
                 {less
                     ? businesses
-                          .filter((item) => item.img !== less)
+                          .filter((item) => item?.img !== less)
                           .slice(0, 4)
                           .map((business, index: number) => {
                               return (

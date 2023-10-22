@@ -14,7 +14,7 @@ export default function BusinessCard({
     const { t } = useTranslation("business");
     const router = useRouter();
     const onMoreClick = () => {
-        router.push(`/business/${data.slug}`);
+        router.push(`/business/${data?.slug}`);
     };
     return (
         <Fade
@@ -24,17 +24,17 @@ export default function BusinessCard({
         >
             <div className="relative h-auto aspect-[0.85] w-full">
                 <Image
-                    src={`/images/business/${data.img}.png`}
-                    alt={`${data.img}-image`}
+                    src={`/images/business/${data?.img}.png`}
+                    alt={`${data?.img}-image`}
                     fill
                 />
             </div>
             <div className="flex flex-col gap-y-5 md:gap-y-[30px]">
                 <div className="font-bold text-big">
-                    {t(`${data.img}.title`)}
+                    {t(`${data?.img}.title`)}
                 </div>
                 <div className="text-sm line-clamp-2">
-                    {t(`${data.img}.description`)}
+                    {t(`${data?.img}.description`)}
                 </div>
                 <div
                     onClick={onMoreClick}
