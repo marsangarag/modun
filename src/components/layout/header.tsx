@@ -1,20 +1,24 @@
 import { useTranslation } from "next-i18next";
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
 import { useThemeSwitcher } from "@/lib/helper";
 
-export default function Header({ scrollPos }: { scrollPos: number }) {
+export default function Header() {
     const router = useRouter();
     const { theme, setTheme } = useThemeSwitcher();
     const { pathname } = router;
     const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false);
     const { t, i18n } = useTranslation("header");
+    const { scrollY } = useScroll();
+    const [scrollPos, setScrollPos] = useState<number>(0);
+    useMotionValueEvent(scrollY, "change", (latest) => setScrollPos(latest));
+
     const navItems = [
         { route: "/", title: "about" },
-        { route: "business", title: "business" },
-        { route: "news", title: "news" },
+        { route: "/business", title: "business" },
+        { route: "/news", title: "news" },
         { route: "/hr", title: "hr" },
         { route: "/lacolina", title: "lacolina" },
     ];

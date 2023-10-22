@@ -5,15 +5,12 @@ export default function Group() {
     const { t } = useTranslation("home");
 
     return (
-        <Fade
-            direction="left"
-            className="flex flex-col gap-y-10 main-width overflow-hidden"
-        >
+        <Fade direction="left" className="my-col-10 main-width overflow-hidden">
             <div className="text-huge font-extrabold text-center md:text-start">
                 {t("intro.title").toUpperCase()}
             </div>
             <div className="text-justify font-dm">{t("intro.text")}</div>
-            <div className="flex flex-col gap-y-5 items-center justify-between md:flex-row gap-x-5 md:pt-10 place-items-start">
+            <div className="my-col-5 items-center justify-between md:flex-row gap-x-5 md:pt-10 place-items-start">
                 <div className="flex flex-col justify-start h-full text-center md:text-start">
                     <div className="text-blue font-black text-biggest ">
                         30+

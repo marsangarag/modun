@@ -12,9 +12,9 @@ export default function Ceo() {
                 <div className="absolute bottom-0 right-0 h-full hidden xl:block w-auto aspect-[0.43] -z-10">
                     <Image src={`/icons/${theme}/grid.svg`} alt="grid" fill />
                 </div>
-                <div className="main-width flex flex-col gap-y-5 md:gap-y-10 relative">
+                <div className="main-width  my-col-5 md:gap-y-10 relative">
                     <div className="xl:grid grid-cols-7 flex flex-col gap-10 justify-between w-full h-full">
-                        <div className="flex flex-col gap-y-5 md:gap-y-10 col-span-4">
+                        <div className="my-col-5 md:gap-y-10 col-span-4">
                             <div className="flex flex-col gap-y-2.5 md:gap-y-5">
                                 <Fade
                                     direction="up"

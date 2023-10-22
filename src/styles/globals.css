@@ -185,7 +185,7 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
 
 ::-webkit-scrollbar {
     width: 0 !important;
-    display: none;
+    display: none !important;
 }
 /* @media screen and (min-width: 900px) {
 } */
@@ -216,6 +216,9 @@ video {
     .font-dm {
         font-family: "DMSans" !important;
     }
+    .text-reverse {
+        @apply text-white dark:text-black;
+    }
 }
 
 .gradient-border {
@@ -227,4 +230,18 @@ video {
         rgba(236, 29, 36, 1),
         rgba(0, 67, 210, 1)
     );
+}
+
+.my-col-5 {
+    @apply flex flex-col gap-y-5;
+}
+.my-col-10 {
+    @apply flex flex-col gap-y-10;
+}
+.my-col-20 {
+    @apply flex flex-col gap-y-20;
+}
+
+.center {
+    @apply top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
 }

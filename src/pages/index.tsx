@@ -1,12 +1,14 @@
 import Ceo from "@/components/home/ceo";
 import Group from "@/components/home/group";
+import LacolinaComponent from "@/components/home/lacolina";
 import Logos from "@/components/home/logos";
+import News from "@/components/home/news";
 import Slogans from "@/components/home/slogans";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
     return (
-        <div className="flex flex-col gap-y-10 md:gap-y-20 xl:gap-y-24">
+        <div className="my-col-10 md:gap-y-20 xl:gap-y-24">
             <video loop autoPlay muted playsInline>
                 <source src="/video/banner-vid.mp4" />
             </video>
@@ -14,12 +16,19 @@ export default function Home() {
             <Slogans />
             <Ceo />
             <Logos />
+            <News />
+            <LacolinaComponent />
         </div>
     );
 }
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
     props: {
-        ...(await serverSideTranslations(locale, ["header", "footer", "home"])),
+        ...(await serverSideTranslations(locale, [
+            "header",
+            "footer",
+            "home",
+            "news",
+        ])),
     },
 });

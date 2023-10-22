@@ -7,10 +7,10 @@ export default function Slogans() {
     const { t } = useTranslation("home");
     const { theme } = useThemeSwitcher();
     return (
-        <div className="pt-20 main-width md:grid lg:grid-cols-3 grid-cols-2 flex flex-col gap-y-10 gap-x-5">
+        <div className="pt-20 main-width md:grid lg:grid-cols-3 grid-cols-2 my-col-10 gap-x-5">
             <Fade
                 direction="right"
-                className={`flex flex-col w-full card-bg gap-5 md:gap-y-10 items-center p-10 ${
+                className={`flex flex-col w-full card-bg my-col-5 md:gap-y-10 items-center p-10 ${
                     theme === "light" ? "gradient-border" : "border-blue border"
                 } `}
             >
@@ -33,7 +33,7 @@ export default function Slogans() {
             <Fade
                 delay={0.1}
                 direction="right"
-                className={`flex flex-col w-full card-bg gap-5 md:gap-y-10 items-center p-10 ${
+                className={`flex flex-col w-full card-bg my-col-5 md:gap-y-10 items-center p-10 ${
                     theme === "light" ? "gradient-border" : "border-blue border"
                 } `}
             >
@@ -56,7 +56,7 @@ export default function Slogans() {
             <Fade
                 delay={0.2}
                 direction="right"
-                className={`flex flex-col w-full card-bg gap-5 md:gap-y-10 items-center p-10 ${
+                className={`flex flex-col w-full card-bg my-col-5 md:gap-y-10 items-center p-10 ${
                     theme === "light" ? "gradient-border" : "border-blue border"
                 } `}
             >

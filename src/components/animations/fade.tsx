@@ -12,10 +12,10 @@ export default function Fade({
     className?: string;
 }) {
     const animationDirection: any = {
-        left: { x: -200 },
-        right: { x: 200 },
-        up: { y: 200 },
-        none: { x: 0, y: 0 },
+        left: { x: "-10%" },
+        right: { x: "10%" },
+        up: { y: "10%" },
+        none: { x: "0%", y: "0%" },
     };
 
     const animationConfig = {
