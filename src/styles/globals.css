@@ -146,6 +146,7 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
     .text-huge {
         font-size: 32px !important;
     }
+
     .text-biggest {
         font-size: 48px !important;
     }
@@ -178,6 +179,7 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
     .text-huge {
         font-size: 48px !important;
     }
+
     .text-biggest {
         font-size: 64px !important;
     }
@@ -202,7 +204,7 @@ video {
         @apply bg-white dark:bg-black;
     }
     .blue-text {
-        @apply text-blue dark:text-lightblue;
+        @apply text-blue dark:text-white;
     }
     .border-color {
         @apply border-black dark:border-white;

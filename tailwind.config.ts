@@ -15,6 +15,7 @@ const config: Config = {
                 big: "32px",
                 bigger: "48px",
                 huge: "64px",
+                84: "84px",
                 biggest: "128px",
             },
         },

@@ -1,5 +1,6 @@
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
+import Fade from "../animations/fade";
 
 export default function LacolinaComponent() {
     const { t } = useTranslation("home");
@@ -14,18 +15,20 @@ export default function LacolinaComponent() {
                 />
             </div>
             <div className="my-col-5 md:grid grid-cols-3 main-width">
-                <div className="my-col-5">
+                <Fade direction="up" className="my-col-5">
                     <div className="text-blue font-bold">
                         {t("lacolina.subtitle")}
                     </div>
                     <div className="text-huge font-extrabold">
                         {t("lacolina.title").toUpperCase()}
                     </div>
-                </div>
+                </Fade>
                 <div className="col-span-2 grid grid-cols-2 gap-5 lg:gap-10">
                     {Array.from({ length: 4 }).map((item, index: number) => {
                         return (
-                            <div
+                            <Fade
+                                direction="right"
+                                delay={index * 0.1}
                                 key={index}
                                 className="relative h-auto aspect-[0.91] w-auto"
                             >
@@ -44,7 +47,7 @@ export default function LacolinaComponent() {
                                         </div>
                                     </div>
                                 ) : null}
-                            </div>
+                            </Fade>
                         );
                     })}
                 </div>
