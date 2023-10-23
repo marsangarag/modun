@@ -250,3 +250,35 @@ video {
 .center {
     @apply top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2;
 }
+
+.ios-switch i {
+    position: relative;
+    display: block;
+    width: 65px;
+    height: 26px;
+    transition: all 0.3s ease-in-out;
+    @apply bg-gray-300 rounded-xl;
+}
+
+.ios-switch i::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate3d(2px, 2px, 0);
+    transition: all 0.3s ease-in-out;
+}
+
+.ios-switch input {
+    display: none;
+}
+.ios-switch input:checked + i {
+    @apply bg-black;
+}
+
+.ios-switch input:checked + i::after {
+    transform: translate3d(18px, 2px, 0);
+}

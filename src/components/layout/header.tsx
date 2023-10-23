@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import { useState } from "react";
 import { useThemeSwitcher } from "@/lib/helper";
+import Switcher from "../common/switch";
 
 export default function Header() {
     const router = useRouter();
-    const { theme, setTheme } = useThemeSwitcher();
+    const { theme } = useThemeSwitcher();
     const { pathname } = router;
     const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false);
     const { t, i18n } = useTranslation("header");
@@ -16,7 +17,7 @@ export default function Header() {
     useMotionValueEvent(scrollY, "change", (latest) => setScrollPos(latest));
 
     const navItems = [
-        { route: "/", title: "about" },
+        { route: "/", title: "home" },
         { route: "/business", title: "business" },
         { route: "/news", title: "news" },
         { route: "/hr", title: "hr" },
@@ -28,10 +29,6 @@ export default function Header() {
         router.push(route);
     };
 
-    const onChangeLanguage = () => {
-        setTheme(theme === "light" ? "dark" : "light");
-    };
-
     return (
         <>
             <header
@@ -41,7 +38,7 @@ export default function Header() {
                         : "h-20 bg-transparent"
                 }`}
             >
-                <div className="relative flex pt-2.5 justify-between gap-x-5 xl:gap-x-10 main-width h-full">
+                <div className="relative flex pt-2.5 justify-between gap-x-8 xl:gap-x-[50px] main-width h-full">
                     <motion.div
                         initial={{ paddingTop: 0 }}
                         animate={{ paddingTop: scrollPos > 80 ? 10 : 0 }}
@@ -90,12 +87,13 @@ export default function Header() {
                                 </div>
                             );
                         })}
-                        <div
+                        <Switcher />
+                        {/* <div
                             onClick={onChangeLanguage}
                             className="nav-item font-bold"
                         >
                             {i18n.language === "mn" ? "ENG" : "MN"}
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </header>
@@ -117,7 +115,7 @@ export default function Header() {
                     scrollPos > 80 ? "pt-[100px]" : "pt-20"
                 }`}
             >
-                <div className="main-width">
+                <div className="w-2/3 mx-auto">
                     {navItems.map((nav) => {
                         return (
                             <div
