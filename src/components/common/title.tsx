@@ -6,7 +6,7 @@ export default function PageTitle({
     subtitle,
 }: {
     title: string;
-    subtitle: string;
+    subtitle?: string;
 }) {
     const { theme } = useThemeSwitcher();
     return (
@@ -19,9 +19,11 @@ export default function PageTitle({
             </div>
             <div className="absolute center  w-full text-center my-col-5">
                 <div className="font-black blue-text text-[28px] md:text-[48px] lg:text-[64px] xl:text-84">
-                    {title.toUpperCase()}
+                    {title?.toUpperCase()}
                 </div>
-                <div className="text-xs lg:text-base">{subtitle}</div>
+                {subtitle ? (
+                    <div className="text-xs lg:text-base">{subtitle}</div>
+                ) : null}
             </div>
         </div>
     );

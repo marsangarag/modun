@@ -1,5 +1,6 @@
 import Ceo from "@/components/home/ceo";
 import Group from "@/components/home/group";
+import HR from "@/components/home/hr";
 import LacolinaComponent from "@/components/home/lacolina";
 import Logos from "@/components/home/logos";
 import News from "@/components/home/news";
@@ -18,6 +19,7 @@ export default function Home() {
             <Logos />
             <News />
             <LacolinaComponent />
+            <HR />
         </div>
     );
 }

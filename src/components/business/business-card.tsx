@@ -29,7 +29,7 @@ export default function BusinessCard({
                     fill
                 />
             </div>
-            <div className="flex flex-col gap-y-5 md:gap-y-[30px]">
+            <div className="flex flex-col gap-y-5 items-start md:gap-y-[30px]">
                 <div className="font-bold text-big">
                     {t(`${data?.img}.title`)}
                 </div>
@@ -38,7 +38,7 @@ export default function BusinessCard({
                 </div>
                 <div
                     onClick={onMoreClick}
-                    className="text-blue italic cursor-pointer"
+                    className="rounded-3xl py-2.5 px-5 bg-reverse text-reverse text-[16px] cursor-pointer font-semibold"
                 >
                     {t("seemore")}
                 </div>

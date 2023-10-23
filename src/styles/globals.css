@@ -221,6 +221,9 @@ video {
     .text-reverse {
         @apply text-white dark:text-black;
     }
+    .bg-reverse {
+        @apply bg-blue dark:bg-white;
+    }
 }
 
 .gradient-border {
