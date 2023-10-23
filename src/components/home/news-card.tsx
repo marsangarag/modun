@@ -3,6 +3,7 @@ import Image from "next/image";
 import Fade from "../animations/fade";
 import { NewsCardType } from "@/lib/types/news.type";
 import { useRouter } from "next/router";
+import parse from "html-react-parser";
 
 export default function NewsCard({
     data,
@@ -30,18 +31,18 @@ export default function NewsCard({
                     fill
                 />
             </div>
-            <div className="flex flex-col justify-between gap-y-5">
+            <div className="flex flex-col justify-between gap-y-5 items-start">
                 <div className="my-col-5 lg:gap-y-10">
                     <div className="text-big xl:text-bigger font-bold">
-                        {t(`${data?.slug}.title`)}
+                        {parse(t(`${data?.slug}.title`))}
                     </div>
-                    <div className="text-sm xl:text-base">
-                        {t(`${data?.slug}.subtitle`)}
+                    <div className="text-sm xl:text-base line-clamp-2 text-justify">
+                        {parse(t(`${data?.slug}.subtitle`))}
                     </div>
                 </div>
                 <div
                     onClick={onMoreClick}
-                    className="text-blue italic cursor-pointer"
+                    className="rounded-3xl py-2.5 px-5 bg-reverse text-reverse text-[16px] cursor-pointer font-semibold"
                 >
                     {t("seemore")}
                 </div>

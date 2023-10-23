@@ -221,11 +221,14 @@ video {
     .text-reverse {
         @apply text-white dark:text-black;
     }
+    .bg-reverse {
+        @apply bg-blue dark:bg-white;
+    }
 }
 
 .gradient-border {
     border: 1px solid;
-    border-image-slice: 1;
+    border-image-slice: 1 !important;
     border-width: 1px;
     border-image-source: linear-gradient(
         to bottom,
