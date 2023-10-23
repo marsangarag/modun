@@ -16,7 +16,7 @@ export default function Header() {
     useMotionValueEvent(scrollY, "change", (latest) => setScrollPos(latest));
 
     const navItems = [
-        { route: "/home", title: "about" },
+        { route: "/", title: "about" },
         { route: "/business", title: "business" },
         { route: "/news", title: "news" },
         { route: "/hr", title: "hr" },
@@ -78,13 +78,13 @@ export default function Header() {
                                     onClick={() => onNavigate(nav.route)}
                                     key={nav.title}
                                     className={`nav-item group ${
-                                        pathname.includes(nav.route)
+                                        pathname === nav.route
                                             ? "font-bold"
                                             : ""
                                     }`}
                                 >
                                     <div>{t(`${nav.title}`)}</div>
-                                    {pathname.includes(nav.route) ? null : (
+                                    {pathname === nav.route ? null : (
                                         <div className="group-hover:w-full w-0 transition-[width] h-0.5 bg-black dark:bg-white rounded-sm absolute left-0 bottom-0"></div>
                                     )}
                                 </div>
