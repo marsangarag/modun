@@ -82,7 +82,7 @@ body {
     overscroll-behavior-y: none !important;
     -webkit-user-select: none;
     margin: 0;
-    font-family: "Montserrat" !important;
+    font-family: "DMSans" !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     scroll-padding: 0;
@@ -203,38 +203,60 @@ video {
     .background-color {
         @apply bg-white dark:bg-black;
     }
+
     .blue-text {
         @apply text-blue dark:text-white;
     }
     .border-color {
         @apply border-black dark:border-white;
     }
+    .bg-gradient {
+        @apply bg-gradient-to-b from-blue to-red dark:to-black;
+    }
+
+    .bg-gradient:hover {
+        background-image: none !important;
+        transition: background-color 500ms !important;
+    }
+
     .main-width {
         @apply w-5/6 mx-auto;
     }
     .card-bg {
         @apply bg-white dark:bg-blue;
     }
-    .font-dm {
-        font-family: "DMSans" !important;
+    .font-mont {
+        font-family: "Montserrat" !important;
     }
+
+    .gradient-border {
+        border: 1px solid;
+        border-image-slice: 1 !important;
+        border-width: 1px;
+        border-image-source: linear-gradient(to bottom, #ec1d24, #0043d2);
+    }
+
+    .text-big,
+    .text-bigger,
+    .text-huge,
+    .text-biggest {
+        @apply font-mont;
+    }
+
     .text-reverse {
         @apply text-white dark:text-black;
     }
     .bg-reverse {
         @apply bg-blue dark:bg-white;
     }
-}
 
-.gradient-border {
-    border: 1px solid;
-    border-image-slice: 1 !important;
-    border-width: 1px;
-    border-image-source: linear-gradient(
-        to bottom,
-        rgba(236, 29, 36, 1),
-        rgba(0, 67, 210, 1)
-    );
+    .my-button {
+        @apply font-mont rounded-full py-2.5 px-5 card-bg text-blue dark:text-white text-reverse text-[15px] cursor-pointer;
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .my-button:hover {
+        @apply bg-reverse text-white dark:text-blue shadow-none;
+    }
 }
 
 .my-col-5 {
@@ -255,30 +277,47 @@ video {
     position: relative;
     display: block;
     width: 65px;
-    height: 26px;
+    height: 30px;
     transition: all 0.3s ease-in-out;
-    @apply bg-gray-300 rounded-xl;
+    @apply bg-[#efefef] rounded-full;
 }
 
 .ios-switch i::after {
     content: "";
-    position: absolute;
-    left: 0;
-    width: 20px;
-    height: 20px;
-    background-color: #fff;
-    border-radius: 50%;
+    background-image: url("/images/sun.png");
     transform: translate3d(2px, 2px, 0);
     transition: all 0.3s ease-in-out;
+    @apply rounded-full bg-white w-[26px] h-[26px] inset-0 absolute;
+}
+
+.ios-switch i::before {
+    content: "LIGHT";
+    transition: all 0.3s ease-in-out;
+    transform: translate3d(-5%, 50%, 0);
+    @apply not-italic text-[10px] font-semibold text-end text-black absolute;
 }
 
 .ios-switch input {
     display: none;
 }
 .ios-switch input:checked + i {
-    @apply bg-black;
+    @apply bg-[#222222];
 }
 
 .ios-switch input:checked + i::after {
-    transform: translate3d(18px, 2px, 0);
+    transform: translate3d(37px, 2px, 0);
+    content: "";
+    background-image: url("/images/moon.png");
+    background-color: white;
+}
+
+.ios-switch input:checked + i::before {
+    content: "DARK";
+    transition: all 0.3s ease-in-out;
+    transform: translate3d(-95%, 50%, 0);
+    @apply text-white;
+}
+
+.slogan-card {
+    @apply aspect-[1.1] w-full h-auto;
 }

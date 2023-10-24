@@ -23,7 +23,7 @@ export default function HR() {
                 className="col-span-4 relative bg-blue text-white w-full h-full py-20 md:py-28 lg:py-36 xl:py-44"
             >
                 <div className="my-col-5 md:my-col-10 w-4/5 mx-auto">
-                    <div className="text-[24px]  md:text-[32px] lg:text-[40px] xl:text-[72px] font-bold">
+                    <div className="text-[24px]  md:text-[32px] lg:text-[40px] xl:text-[72px] font-bold font-mont">
                         {t("hr.title")}
                     </div>
                     <div className="text-[16px]">{t("hr.subtitle")}</div>

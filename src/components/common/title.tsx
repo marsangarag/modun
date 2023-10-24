@@ -18,7 +18,7 @@ export default function PageTitle({
                 <Image src={`/icons/${theme}/grid.svg`} alt="grid" fill />
             </div>
             <div className="absolute center  w-full text-center my-col-5">
-                <div className="font-black blue-text text-[28px] md:text-[48px] lg:text-[64px] xl:text-84">
+                <div className="font-black blue-text text-[28px] font-mont md:text-[48px] lg:text-[64px] xl:text-84">
                     {title?.toUpperCase()}
                 </div>
                 {subtitle ? (

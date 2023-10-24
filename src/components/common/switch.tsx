@@ -7,7 +7,7 @@ export default function Switcher() {
     };
 
     return (
-        <label className="ios-switch">
+        <label className="ios-switch self-start">
             <input
                 onChange={onThemeChange}
                 checked={theme === "dark"}

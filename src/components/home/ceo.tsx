@@ -9,33 +9,34 @@ export default function Ceo() {
     return (
         <>
             <div className={`pt-10 relative h-full w-full`}>
-                <div className="absolute bottom-0 right-0 h-full hidden xl:block w-1/4 -z-10 ">
+                <div className="absolute bottom-0 right-0 h-[110%] hidden xl:block w-1/4 -z-10">
                     <Image src={`/icons/${theme}/ceo.svg`} alt="grid" fill />
                 </div>
                 <div className="main-width  my-col-5 md:gap-y-10 relative">
                     <div className="xl:grid grid-cols-7 flex flex-col gap-10 justify-between w-full h-full">
                         <div className="my-col-5 md:gap-y-10 col-span-4">
-                            <div className="flex flex-col gap-y-2.5 md:gap-y-5">
-                                <Fade
-                                    direction="up"
-                                    className="text-blue font-bold"
-                                >
-                                    {t("ceo.subtitle")}
-                                </Fade>
-                                <Fade
-                                    direction="up"
-                                    delay={0.1}
-                                    className="font-extrabold text-bigger"
-                                >
-                                    {t("ceo.title")}
-                                </Fade>
-                            </div>
+                            <Fade
+                                direction="up"
+                                delay={0.1}
+                                className="font-extrabold text-bigger"
+                            >
+                                {t("ceo.title").toUpperCase()}
+                            </Fade>
                             <Fade
                                 delay={0.2}
                                 direction="left"
                                 className="text-justify text-sm"
                             >
                                 {t("ceo.text")}
+                            </Fade>
+                            <Fade direction="right">
+                                <Image
+                                    className="mx-auto"
+                                    src={`/images/${theme}/signature.png`}
+                                    alt="grid"
+                                    width={494}
+                                    height={154}
+                                />
                             </Fade>
                         </div>
                         <Fade
@@ -44,7 +45,7 @@ export default function Ceo() {
                             className="relative rounded-xl h-full w-full aspect-[0.72] overflow-hidden col-span-3"
                         >
                             <Image src={"/images/ceo.jpg"} alt="ceo" fill />
-                            <div className="absolute text-white bottom-10 right-10">
+                            <div className="absolute font-mont text-white bottom-10 right-10">
                                 <div className="text-big">
                                     {t("ceo.name").toUpperCase()}
                                 </div>
@@ -55,15 +56,6 @@ export default function Ceo() {
                         </Fade>
                     </div>
                 </div>
-            </div>
-            <div className="main-width">
-                <Image
-                    className="mx-auto"
-                    src={`/images/${theme}/signature.png`}
-                    alt="grid"
-                    width={494}
-                    height={154}
-                />
             </div>
         </>
     );

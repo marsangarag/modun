@@ -36,10 +36,7 @@ export default function BusinessCard({
                 <div className="text-sm line-clamp-2">
                     {t(`${data?.img}.description`)}
                 </div>
-                <div
-                    onClick={onMoreClick}
-                    className="rounded-3xl py-2.5 px-5 bg-reverse text-reverse text-[16px] cursor-pointer font-semibold"
-                >
+                <div onClick={onMoreClick} className="my-button">
                     {t("seemore")}
                 </div>
             </div>
