@@ -1,13 +1,19 @@
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
 export default function HrForm() {
     const { t } = useTranslation("hr");
     return (
-        <div className="my-col-10 md:flex-row justify-between main-width">
-            <div className="w-full md:w-1/5 font-extrabold text-[28px] font-mont md:text-[48px] lg:text-[64px] xl:text-[72px]">
-                {t("caption").toUpperCase()}
+        <div className="my-col-10 md:flex-row justify-between main-width md:items-stretch">
+            <div className="w-full md:w-2/5 h-auto aspect-video relative rounded-3xl overflow-hidden">
+                <Image
+                    src={"/images/banner-form.png"}
+                    className="object-cover"
+                    alt="banner-form"
+                    fill
+                />
             </div>
-            <form className="w-full md:w-1/2 my-col-10 md:gap-y-[70px]">
+            <form className="w-full md:w-1/2 my-col-5 md:gap-y-10 lg:gap-y-14">
                 <label htmlFor="name" className="w-full text-sm cursor-default">
                     {t("name")}
                     <input
@@ -48,7 +54,7 @@ export default function HrForm() {
                 </label>
                 <input
                     type="button"
-                    className="cursor-pointer bg-blue self-start w-1/2 text-white font-mont py-6"
+                    className="cursor-pointer bg-blue self-start w-1/2 text-white font-mont py-2 sm:py-4 md:py-6"
                     value={t("button")}
                 />
             </form>

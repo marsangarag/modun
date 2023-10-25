@@ -22,7 +22,7 @@ export default function NewsCard({
         <Fade
             direction="right"
             delay={index * 0.1}
-            className="flex flex-col gap-y-5 md:flex-row gap-x-10 lg:gap-x-20 border-b-2 border-color last:border-none pb-10 md:pb-20 md:items-center xl:items-start"
+            className="flex flex-col gap-y-5 md:flex-row gap-x-10 lg:gap-x-20 border-b-2 border-color last:border-none pb-10 md:pb-20 md:items-center xl:items-stretch"
         >
             <div className="relative w-full md:w-1/2 aspect-[1.8] h-auto">
                 <Image
@@ -36,7 +36,8 @@ export default function NewsCard({
                     <div className="text-big xl:text-bigger font-bold">
                         {parse(t(`${data?.slug}.title`).toUpperCase())}
                     </div>
-                    <div className="text-sm line-clamp-2 lg:line-clamp-3 xl:line-clamp-4 text-justify">
+                    <div className="text-sm line-clamp-2 lg:line-clamp-3 md:pl-5 xl:line-clamp-4 text-justify relative">
+                        <div className="absolute hidden md:block left-0 top-2 bg-blue w-0.5 h-[calc(100%-12px)]"></div>
                         {parse(t(`${data?.slug}.subtitle`))}
                     </div>
                 </div>

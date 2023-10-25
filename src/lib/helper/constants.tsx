@@ -1,8 +1,8 @@
 export const routerStack = ["/", "/business", "/news", "/hr", "/lacolina"];
 
 export const news = [
-    { slug: "rich-experience", img: "0" },
     { slug: "anniversary", img: "1" },
+    { slug: "rich-experience", img: "0" },
 ];
 
 export const businesses = [
@@ -29,5 +29,9 @@ export const businesses = [
     {
         slug: "borolzoi",
         img: "borolzoi",
+    },
+    {
+        slug: "lacolina",
+        img: "lacolina",
     },
 ];

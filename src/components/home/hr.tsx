@@ -8,10 +8,10 @@ export default function HR() {
 
     return (
         <div className="flex flex-col md:flex-row md:items-center relative lg:mt-20">
-            <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-auto aspect-[0.5] h-[150%]">
+            <div className="hidden md:block absolute -right-20 top-1/2 -translate-y-1/2 w-auto aspect-[0.5] h-[150%]">
                 <Image src={`/icons/${theme}/ceo.svg`} alt="grid" fill />
             </div>
-            <div className="md:w-2/3 w-full relative h-full aspect-[1.40]">
+            <div className="md:w-1/2 w-full relative h-full aspect-[1.58]">
                 <Image
                     src={"/images/hr.png"}
                     alt="hr"
@@ -19,10 +19,13 @@ export default function HR() {
                     fill
                 />
             </div>
-            <div className="relative w-full h-full py-10 md:py-0">
-                <div className="my-col-5 md:my-col-10 w-4/5 mx-auto">
-                    <div className="text-[24px] blue-text md:text-[32px] lg:text-[40px] xl:text-[72px] font-bold font-mont">
-                        {t("hr.title")}
+            <div className="relative w-full md:w-1/2 h-full py-10 md:py-0">
+                <div className="my-col-5 lg:gap-y-10 w-4/5 mx-auto">
+                    <div className="text-big blue-text font-bold">
+                        {t("hr.caption").toUpperCase()}
+                    </div>
+                    <div className="text-[24px] blue-text md:text-[32px] lg:text-[40px] xl:text-[72px] font-medium font-mont">
+                        {t("hr.title").toUpperCase()}
                     </div>
                     <div className="text-[16px] blue-text w-2/3">
                         {t("hr.subtitle")}
@@ -35,7 +38,7 @@ export default function HR() {
                         />
                         <input
                             type="button"
-                            className="font-bold py-[15px] px-[30px] cursor-pointer text-white bg-black dark:bg-blue"
+                            className="font-bold py-[15px] px-[30px] cursor-pointer text-white bg-blue"
                             value={t("hr.button")}
                         />
                     </div>

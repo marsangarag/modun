@@ -20,19 +20,13 @@ export default function NewsDetailCard({ data }: { data: NewsCardType }) {
                 />
             </Fade>
             <div className="my-col-10 md:gap-y-[50px]">
-                <div className="my-col-10 md:grid grid-cols-4 items-start md:items-center">
-                    <Fade
-                        direction="right"
-                        delay={0.1}
-                        className="text-huge font-bold col-span-3"
-                    >
-                        {parse(t(`${data?.slug}.title`))}
-                    </Fade>
-                    <Fade direction="right" delay={0.2} className="col-span-1">
-                        <div className="font-bold text-big">Х.Галмандах</div>
-                        <div className="text-sm">Сэтгүүлч</div>
-                    </Fade>
-                </div>
+                <Fade
+                    direction="right"
+                    delay={0.1}
+                    className="text-huge font-bold"
+                >
+                    {parse(t(`${data?.slug}.title`))}
+                </Fade>
                 <Fade
                     direction="up"
                     delay={0.3}

@@ -15,7 +15,7 @@ export default function Group() {
                     {t("intro.caption")}
                 </div>
                 <div className="text-justify relative">
-                    <div className="absolute hidden sm:block -left-[22px] top-2 bg-blue w-1.5 h-[calc(100%-12px)]"></div>
+                    <div className="absolute hidden sm:block -left-5 top-2 bg-blue w-0.5 h-[calc(100%-12px)]"></div>
                     {t("intro.text")}
                 </div>
             </div>

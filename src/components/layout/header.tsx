@@ -9,16 +9,15 @@ import Switcher from "../common/switch";
 export default function Header() {
     const router = useRouter();
     const { theme } = useThemeSwitcher();
-    const { pathname } = router;
     const [isNavExpanded, setIsNavExpanded] = useState<boolean>(false);
-    const { t, i18n } = useTranslation("header");
+    const { t } = useTranslation("header");
     const { scrollY } = useScroll();
     const [scrollPos, setScrollPos] = useState<number>(0);
     useMotionValueEvent(scrollY, "change", (latest) => setScrollPos(latest));
 
     const navItems = [
         { routes: ["/"], route: "/", title: "home" },
-        { routes: ["/buiness"], route: "/business", title: "business" },
+        { routes: ["/business"], route: "/business", title: "business" },
         { routes: ["/news", "/news/[slug]"], route: "/news", title: "news" },
         { routes: ["/hr"], route: "/hr", title: "hr" },
         { routes: ["/la-colina"], route: "/la-colina", title: "lacolina" },
@@ -32,7 +31,7 @@ export default function Header() {
     return (
         <>
             <header
-                className={`fixed top-0 left-0 w-full z-50 transition-all ${
+                className={`fixed font-mont top-0 left-0 w-full z-50 transition-all ${
                     scrollPos > 80
                         ? "h-[100px] background-color"
                         : "h-20 bg-transparent"
@@ -84,7 +83,7 @@ export default function Header() {
                                     {nav.routes.includes(
                                         router.pathname
                                     ) ? null : (
-                                        <div className="group-hover:w-full w-0 transition-[width] h-0.5 bg-black dark:bg-white rounded-sm absolute left-0 bottom-0"></div>
+                                        <div className="group-hover:w-full w-0 transition-[width] h-0.5 bg-blue rounded-sm absolute left-0 bottom-0"></div>
                                     )}
                                 </div>
                             );

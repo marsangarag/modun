@@ -234,10 +234,38 @@ video {
     }
 
     .gradient-border {
-        border: 1px solid;
-        border-image-slice: 1 !important;
-        border-width: 1px;
-        border-image-source: linear-gradient(to bottom, #ec1d24, #0043d2);
+        @apply relative;
+    }
+
+    .gradient-border::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 24px;
+        padding: 2px;
+        background: linear-gradient(to bottom, #ec1d24, #0043d2);
+        -webkit-mask: linear-gradient(to bottom, white, white) content-box,
+            linear-gradient(to bottom, white, white);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+    }
+
+    .news-border {
+        border: 5px solid;
+        border-image: linear-gradient(to bottom, #ec1d24, #0043d2) 1;
+    }
+
+    .gradient-border:hover,
+    .blue-border:hover {
+        scale: 105%;
+    }
+
+    .blue-border {
+        @apply border-blue border-2 hover:border-none;
+    }
+
+    .gradient-border:hover::before {
+        background: none !important;
     }
 
     .text-big,
@@ -281,7 +309,7 @@ video {
 .ios-switch i {
     position: relative;
     display: block;
-    width: 65px;
+    width: 50px;
     height: 30px;
     transition: all 0.3s ease-in-out;
     @apply bg-[#efefef] rounded-full;
@@ -294,13 +322,12 @@ video {
     transition: all 0.3s ease-in-out;
     @apply rounded-full bg-white w-[26px] h-[26px] inset-0 absolute;
 }
-
+/* 
 .ios-switch i::before {
     content: "LIGHT";
-    /* transition: all 0.3s ease-in-out; */
     transform: translate3d(-5%, 50%, 0);
     @apply not-italic text-[10px] font-semibold text-end text-black absolute;
-}
+} */
 
 .ios-switch input {
     display: none;
@@ -310,18 +337,17 @@ video {
 }
 
 .ios-switch input:checked + i::after {
-    transform: translate3d(37px, 2px, 0);
+    transform: translate3d(22px, 2px, 0);
     content: "";
     background-image: url("/images/moon.png");
     background-color: white;
 }
 
-.ios-switch input:checked + i::before {
+/* .ios-switch input:checked + i::before {
     content: "DARK";
-    /* transition: all 0.3s ease-in-out; */
     transform: translate3d(-95%, 50%, 0);
     @apply text-white;
-}
+} */
 
 .slogan-card {
     @apply aspect-[1.1] w-full h-auto;
@@ -343,7 +369,6 @@ video {
     @apply opacity-50 !important;
 }
 
-.react-slideshow-container + ul.indicators .each-slideshow-indicator:hover,
 .react-slideshow-container + ul.indicators .each-slideshow-indicator.active {
     @apply opacity-100 !important;
 }

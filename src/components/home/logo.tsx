@@ -1,19 +1,20 @@
-import Image from "next/image";
+import { useThemeSwitcher } from "@/lib/helper";
 
 export default function Logo({ index }: { index: number }) {
+    const { theme } = useThemeSwitcher();
     const onLogoClick = () => {
-        console.log("sda");
+        console.log("a");
     };
 
     return (
         <div
             onClick={onLogoClick}
-            className="relative h-[50px] cursor-pointer w-[174px] aspect-square mx-10"
+            className="relative aspect-square w-[200px] h-auto cursor-pointer mx-10"
         >
-            <Image
-                src={`/images/logos/${index + 1}.png`}
+            <img
+                className="absolute center object-cover"
+                src={`/images/logos/${theme}/${index}.png`}
                 alt={`logo-${index + 1}`}
-                fill
             />
         </div>
     );

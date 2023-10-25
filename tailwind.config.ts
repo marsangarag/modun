@@ -9,6 +9,7 @@ const config: Config = {
                 lightblue: "#C7F4FE",
                 blue: "#0043D2",
                 red: "#EC1D24",
+                colina: "#E3A463",
             },
             fontSize: {
                 sm: "18px",

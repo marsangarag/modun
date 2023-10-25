@@ -1,4 +1,5 @@
 import Fade from "@/components/animations/fade";
+import TitleAnimation from "@/components/animations/title";
 import Ceo from "@/components/home/ceo";
 import Group from "@/components/home/group";
 import HR from "@/components/home/hr";
@@ -8,12 +9,14 @@ import Logos from "@/components/home/logos";
 import NewsCard from "@/components/home/news-card";
 import SloganCard from "@/components/home/slogan-card";
 import { news } from "@/lib/helper/constants";
+import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 
 export default function Home() {
+    const { t } = useTranslation("news");
     return (
-        <div className="my-col-10 md:gap-y-20 xl:gap-y-24">
+        <div className="my-col-10 md:gap-y-20 xl:gap-y-24 -mt-20">
             <video loop autoPlay muted playsInline>
                 <source src="/video/banner-vid.mp4" />
             </video>
@@ -32,11 +35,19 @@ export default function Home() {
                 })}
             </div>
             <div className="main-width my-col-10 md:gap-y-20 pt-10">
-                {news.map((item, index) => {
-                    return (
-                        <NewsCard data={item} index={index} key={item.slug} />
-                    );
-                })}
+                <TitleAnimation text={t("caption")} />
+                {news
+                    .slice(news.length - 2)
+                    .reverse()
+                    .map((item, index) => {
+                        return (
+                            <NewsCard
+                                data={item}
+                                index={index}
+                                key={item.slug}
+                            />
+                        );
+                    })}
             </div>
             <LacolinaComponent />
             <Logos />

@@ -15,7 +15,7 @@ export default function Page({ children }: { children: any }) {
                 exit={{ opacity: 0 }}
                 key={router.pathname}
                 transition={{ duration: 1 }}
-                className={`pt-20 md:pt-0`}
+                className={`pt-20`}
             >
                 {children}
                 <Footer />
