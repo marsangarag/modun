@@ -22,16 +22,16 @@ export default function NewsCard({
         <Fade
             direction="right"
             delay={index * 0.1}
-            className="flex flex-col gap-y-5 md:grid grid-cols-7 gap-x-10 lg:gap-x-20 border-b-2 border-color last:border-none pb-10 md:pb-20 items-stretch"
+            className="flex flex-col gap-y-5 md:flex-row gap-x-10 lg:gap-x-20 border-b-2 border-color last:border-none pb-10 md:pb-20 md:items-center xl:items-start"
         >
-            <div className="relative w-full aspect-[1.8] h-auto col-span-4">
+            <div className="relative w-full md:w-1/2 aspect-[1.8] h-auto">
                 <Image
                     src={`/images/news/${data?.img}.png`}
                     alt={`newsimg-${data?.img}`}
                     fill
                 />
             </div>
-            <div className="flex flex-col justify-between gap-y-5 items-start col-span-3">
+            <div className="flex flex-col justify-between gap-y-5 items-start w-full md:w-1/2">
                 <div className="my-col-5 lg:gap-y-10">
                     <div className="text-big xl:text-bigger font-bold">
                         {parse(t(`${data?.slug}.title`))}

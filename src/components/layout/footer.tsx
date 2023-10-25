@@ -2,15 +2,7 @@ import { useThemeSwitcher } from "@/lib/helper";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import {
-    Call,
-    Facebook,
-    Instagram,
-    Mail,
-    Pin,
-    Twitter,
-    Youtube,
-} from "../icons";
+import { Facebook, Instagram, Twitter, Youtube } from "../icons";
 
 export default function Footer() {
     const { t } = useTranslation("footer");
@@ -41,77 +33,75 @@ export default function Footer() {
     };
 
     return (
-        <footer className="text-white">
-            <div className="bg-[#1C1C1C]  pt-10 md:pt-20 lg:pt-32 pb-14 md:pb-24 lg:pb-36 text-sm">
-                <div className="main-width justify-between my-col-10 md:flex-row ">
-                    <div className="justify-between my-col-10 w-full md:w-auto">
-                        <div className="flex md:flex-col md:gap-y-5 justify-between w-full">
-                            <div className="relative aspect-[2.61] w-[136px] h-auto">
-                                <Image
-                                    priority={true}
-                                    src={`/images/${theme}/logo.png`}
-                                    alt="modun-logo"
-                                    fill
-                                />
-                            </div>
-                            <div className="flex flex-col">
-                                <div>{t("slogan.firstline")}</div>
-                                <div>{t("slogan.secondline")}</div>
-                            </div>
-                        </div>
-                        <div className="grid grid-cols-4 place-items-center md:place-items-start gap-x-5">
-                            {icons?.map((icon) => (
-                                <div
-                                    onClick={() =>
-                                        onSocialMediaClick(icon.route)
-                                    }
-                                    className="cursor-pointer"
-                                    key={icon.route}
-                                >
-                                    {icon.icon}
-                                </div>
-                            ))}
-                        </div>
+        <footer className="py-10 mt-10 text-sm border-t border-color main-width my-col-10">
+            <div className="my-col-5 sm:grid grid-cols-2 lg:grid-cols-4 gap-y-10 items-center">
+                <div className="relative aspect-[2.61] w-[136px] h-auto">
+                    <Image
+                        priority={true}
+                        src={
+                            theme === "dark"
+                                ? "/images/dark/logo.png"
+                                : `/images/light/footer.png`
+                        }
+                        alt="footer-logo"
+                        fill
+                    />
+                </div>
+                <a href="tel:+976 1146-1146" className="flex gap-x-2.5">
+                    <Image
+                        priority={true}
+                        src={`/icons/${theme}/call.svg`}
+                        alt="footer-phone"
+                        width={24}
+                        height={24}
+                    />
+                    <div>+976 1146-1146, 9909-7716</div>
+                </a>
+                <a
+                    href="mailto:info@modungroup.com"
+                    className="flex gap-x-2.5 "
+                >
+                    <Image
+                        priority={true}
+                        src={`/icons/${theme}/mail.svg`}
+                        alt="footer-mail"
+                        width={24}
+                        height={24}
+                    />
+                    <div>info@modungroup.com</div>
+                </a>
+                <div className="flex gap-x-2.5 items-center">
+                    <div>
+                        <Image
+                            priority={true}
+                            src={`/icons/${theme}/pin.svg`}
+                            alt="footer-pin"
+                            width={24}
+                            height={24}
+                        />
                     </div>
-                    <div className="my-col-5 md:gap-y-10 items-start">
-                        <div className="font-bold text-base">
-                            {t("contact")}
-                        </div>
-                        <div className="my-col-5 text-sm">
-                            <a
-                                href="tel:+976 1146-1146"
-                                className="flex gap-x-2.5"
-                            >
-                                <Call />
-                                <div>+976 1146-1146, 9909-7716</div>
-                            </a>
-                            <a
-                                href="mailto:info@modungroup.com"
-                                className="flex gap-x-2.5 "
-                            >
-                                <Mail />
-                                <div>info@modungroup.com</div>
-                            </a>
-                            <div className="flex gap-x-2.5 items-center">
-                                <div>
-                                    <Pin />
-                                </div>
-                                <div className="hidden md:block">
-                                    <div>{t("address.firstline")}</div>
-                                    <div>{t("address.secondline")}</div>
-                                </div>
-                                <div className="md:hidden ">
-                                    {t("address.firstline") +
-                                        t("address.secondline")}
-                                </div>
-                            </div>
-                        </div>
+                    <div>
+                        <div>{t("address.firstline")}</div>
+                        <div>{t("address.secondline")}</div>
                     </div>
                 </div>
             </div>
-            <div className="bg-blue text-center font-light text-sm py-2.5 md:py-5 lg:py-10">
-                Модун групп 2023
+
+            <div className="flex items-center mx-auto text-center gap-x-5">
+                {icons?.map((icon) => (
+                    <div
+                        onClick={() => onSocialMediaClick(icon.route)}
+                        className="cursor-pointer bg-black dark:bg-white rounded-full p-2"
+                        key={icon.route}
+                    >
+                        {icon.icon}
+                    </div>
+                ))}
             </div>
+
+            {/* <div className="bg-blue text-center font-light text-sm py-2.5 md:py-5 lg:py-10">
+                Модун групп 2023
+            </div> */}
         </footer>
     );
 }

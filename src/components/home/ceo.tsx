@@ -13,8 +13,8 @@ export default function Ceo() {
                     <Image src={`/icons/${theme}/ceo.svg`} alt="grid" fill />
                 </div>
                 <div className="main-width  my-col-5 md:gap-y-10 relative">
-                    <div className="xl:grid grid-cols-7 flex flex-col gap-10 justify-between w-full h-full">
-                        <div className="my-col-5 md:gap-y-10 col-span-4">
+                    <div className="flex flex-col gap-10 justify-between items-center w-full h-full lg:flex-row">
+                        <div className="my-col-5 md:gap-y-10 lg:w-[57%] w-full">
                             <Fade
                                 direction="up"
                                 delay={0.1}
@@ -42,7 +42,7 @@ export default function Ceo() {
                         <Fade
                             direction="right"
                             delay={0.3}
-                            className="relative rounded-xl h-full w-full aspect-[0.72] overflow-hidden col-span-3"
+                            className="relative rounded-xl h-auto w-full lg:w-[43%] aspect-[0.72] overflow-hidden"
                         >
                             <Image src={"/images/ceo.jpg"} alt="ceo" fill />
                             <div className="absolute font-mont text-white bottom-10 right-10">

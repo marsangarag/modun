@@ -21,7 +21,7 @@ export default function LacolinaComponent() {
                     <div className="text-huge font-extrabold">
                         {t("lacolina.title").toUpperCase()}
                     </div>
-                    <div className="text-sm font-mont text-justify">
+                    <div className="text-[18px] md:text-[10px] lg:text-[14px] xl:text-sm font-mont text-justify">
                         {t("lacolina.subtitle")}
                     </div>
                 </Fade>

@@ -1,4 +1,3 @@
-import { useTranslation } from "next-i18next";
 import NewsCard from "./news-card";
 import { news } from "@/lib/helper/constants";
 

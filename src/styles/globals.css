@@ -210,6 +210,7 @@ video {
     .border-color {
         @apply border-black dark:border-white;
     }
+
     .bg-gradient {
         @apply bg-gradient-to-b from-blue to-red dark:to-black;
     }
@@ -292,7 +293,7 @@ video {
 
 .ios-switch i::before {
     content: "LIGHT";
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
     transform: translate3d(-5%, 50%, 0);
     @apply not-italic text-[10px] font-semibold text-end text-black absolute;
 }
@@ -313,7 +314,7 @@ video {
 
 .ios-switch input:checked + i::before {
     content: "DARK";
-    transition: all 0.3s ease-in-out;
+    /* transition: all 0.3s ease-in-out; */
     transform: translate3d(-95%, 50%, 0);
     @apply text-white;
 }
