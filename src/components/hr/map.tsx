@@ -30,7 +30,7 @@ export default function Map() {
             zoom={16}
             options={mapOptions}
             mapTypeId={google.maps.MapTypeId.ROADMAP}
-            mapContainerClassName="w-screen h-auto aspect-[2.1] -mb-[41px]"
+            mapContainerClassName="w-screen h-auto aspect-[2.1] -mb-[41px] font-mont"
         >
             <MarkerF position={center} />
         </GoogleMap>

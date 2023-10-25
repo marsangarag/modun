@@ -21,7 +21,7 @@ export default function Header() {
         { routes: ["/buiness"], route: "/business", title: "business" },
         { routes: ["/news", "/news/[slug]"], route: "/news", title: "news" },
         { routes: ["/hr"], route: "/hr", title: "hr" },
-        { routes: ["/lacolina"], route: "/lacolina", title: "lacolina" },
+        { routes: ["/la-colina"], route: "/la-colina", title: "lacolina" },
     ];
 
     const onNavigate = (route: string) => {

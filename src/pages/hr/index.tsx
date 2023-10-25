@@ -6,6 +6,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function HR() {
     const { t } = useTranslation("hr");
+
     return (
         <div className="my-col-10 md:gap-y-24">
             <PageTitle subtitle={t("subtitle")} title={t("title")} />
@@ -14,6 +15,7 @@ export default function HR() {
         </div>
     );
 }
+
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
     props: {
         ...(await serverSideTranslations(locale, ["header", "footer", "hr"])),
