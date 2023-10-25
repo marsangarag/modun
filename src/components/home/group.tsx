@@ -10,9 +10,14 @@ export default function Group() {
             <div className="text-huge font-extrabold text-center md:text-start">
                 {t("intro.title").toUpperCase()}
             </div>
-            <div className="text-justify relative">
-                <div className="absolute hidden sm:block -left-[22px] top-2 bg-blue w-1.5 h-[calc(100%-12px)]"></div>
-                {t("intro.text")}
+            <div className="my-col-5">
+                <div className="text-blue text-big font-semibold">
+                    {t("intro.caption")}
+                </div>
+                <div className="text-justify relative">
+                    <div className="absolute hidden sm:block -left-[22px] top-2 bg-blue w-1.5 h-[calc(100%-12px)]"></div>
+                    {t("intro.text")}
+                </div>
             </div>
         </Fade>
     );
