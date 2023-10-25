@@ -1,21 +1,24 @@
 import { NewsCardType } from "@/lib/types/news.type";
-import Image from "next/image";
 import Fade from "../animations/fade";
+import Image from "next/image";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import parse from "html-react-parser";
 
-export default function BusinessCard({
-    data,
+export default function NewsPageCard({
     index,
+    data,
 }: {
-    data: NewsCardType;
     index: number;
+    data: NewsCardType;
 }) {
-    const { t } = useTranslation("business");
     const router = useRouter();
+    const { t } = useTranslation("news");
+
     const onMoreClick = () => {
-        router.push(`/business/${data?.slug}`);
+        router.push(`/news/${data?.slug}`);
     };
+
     return (
         <Fade
             direction={index % 2 === 0 ? "left" : "right"}
@@ -24,19 +27,20 @@ export default function BusinessCard({
         >
             <div className="relative h-auto aspect-[0.85] w-full">
                 <Image
-                    src={`/images/business/${data?.img}.png`}
+                    src={`/images/news/${data?.img}.png`}
                     alt={`${data?.img}-image`}
+                    className="object-cover object-left"
                     fill
                 />
             </div>
             <div className="flex flex-col gap-y-5 items-start md:gap-y-[30px]">
                 <div className="font-bold text-big">
-                    {t(`${data?.img}.title`)}
+                    {parse(t(`${data?.slug}.title`))}
                 </div>
                 <div className="text-sm line-clamp-2">
-                    {t(`${data?.img}.description`)}
+                    {parse(t(`${data?.slug}.subtitle`))}
                 </div>
-                <div onClick={onMoreClick} className="my-button">
+                <div onClick={onMoreClick} className="my-button self-end">
                     {t("seemore")}
                 </div>
             </div>

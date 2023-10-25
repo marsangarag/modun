@@ -5,11 +5,13 @@ export default function Fade({
     children,
     delay,
     className,
+    myKey,
 }: {
     direction: string;
     children: any;
     delay?: number;
     className?: string;
+    myKey?: string;
 }) {
     const animationDirection: any = {
         left: { x: "-10%" },
@@ -50,6 +52,7 @@ export default function Fade({
                 duration: 0.5,
                 delay: delay || 0,
             }}
+            key={myKey || undefined}
             className={className}
         >
             {children}

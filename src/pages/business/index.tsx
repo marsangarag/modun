@@ -1,15 +1,54 @@
-import Businesses from "@/components/business/businesses";
-import PageTitle from "@/components/common/title";
+import Fade from "@/components/animations/fade";
+import { businesses } from "@/lib/helper/constants";
+import { NewsCardType } from "@/lib/types/news.type";
 import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useState } from "react";
+import { Slide } from "react-slideshow-image";
+import "react-slideshow-image/dist/styles.css";
 
 export default function BusinessPage() {
     const { t } = useTranslation("business");
+    const [selected, setSelected] = useState<NewsCardType>(businesses[0]);
+
     return (
-        <div className="flex flex-col gap-y-14 md:gap-y-24 pb-14 md:pb-48">
-            <PageTitle title={t("title")} subtitle={t("subtitle")} />
-            <Businesses />
-        </div>
+        <>
+            <div className="relative h-full w-full">
+                <Slide
+                    onStartChange={(_, index) => setSelected(businesses[index])}
+                    cssClass="relative"
+                    duration={10000}
+                    transitionDuration={500}
+                    easing="ease"
+                    arrows={false}
+                    indicators
+                >
+                    {businesses.map((business) => (
+                        <div
+                            key={business.slug}
+                            className="w-screen h-full aspect-[2.1]"
+                            style={{
+                                backgroundImage: `url(/images/business/${business.img}.png)`,
+                                backgroundSize: "cover",
+                                backgroundPosition: "center center",
+                            }}
+                        ></div>
+                    ))}
+                </Slide>
+            </div>
+            <Fade
+                direction="right"
+                myKey={selected.img}
+                className="main-width py-10 my-col-10"
+            >
+                <div className="font-extrabold text-huge">
+                    {t(`${selected.img}.title`)}
+                </div>
+                <div className="text-justify text-sm">
+                    {t(`${selected.img}.description`)}
+                </div>
+            </Fade>
+        </>
     );
 }
 

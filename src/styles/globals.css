@@ -90,6 +90,9 @@ body {
     outline: none;
 }
 
+input {
+    @apply outline-none !important;
+}
 * {
     -webkit-tap-highlight-color: transparent;
 }
@@ -240,6 +243,7 @@ video {
     .text-big,
     .text-bigger,
     .text-huge,
+    .text-84,
     .text-biggest {
         @apply font-mont;
     }
@@ -252,7 +256,7 @@ video {
     }
 
     .my-button {
-        @apply font-mont rounded-full py-2.5 px-5 card-bg text-blue dark:text-white text-reverse text-[15px] cursor-pointer;
+        @apply font-mont rounded-full py-2.5 px-5 card-bg text-blue dark:text-white text-reverse text-[15px] cursor-pointer transition-all duration-300;
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     }
     .my-button:hover {
@@ -321,4 +325,25 @@ video {
 
 .slogan-card {
     @apply aspect-[1.1] w-full h-auto;
+}
+
+.react-slideshow-container + .indicators {
+    @apply absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 m-0 !important;
+}
+
+.react-slideshow-container + ul.indicators li {
+    @apply px-2 md:px-4 last:px-0 !important;
+}
+
+.react-slideshow-container + .indicators li button::before {
+    @apply w-2.5 h-2.5 md:w-5 md:h-5 bg-white rounded-full !important;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator {
+    @apply opacity-50 !important;
+}
+
+.react-slideshow-container + ul.indicators .each-slideshow-indicator:hover,
+.react-slideshow-container + ul.indicators .each-slideshow-indicator.active {
+    @apply opacity-100 !important;
 }

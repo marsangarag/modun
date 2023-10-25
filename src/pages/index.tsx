@@ -5,8 +5,9 @@ import HR from "@/components/home/hr";
 import GroupInfo from "@/components/home/info";
 import LacolinaComponent from "@/components/home/lacolina";
 import Logos from "@/components/home/logos";
-import News from "@/components/home/news";
+import NewsCard from "@/components/home/news-card";
 import SloganCard from "@/components/home/slogan-card";
+import { news } from "@/lib/helper/constants";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import Image from "next/image";
 
@@ -30,7 +31,13 @@ export default function Home() {
                     return <SloganCard key={index} index={index} />;
                 })}
             </div>
-            <News />
+            <div className="main-width my-col-10 md:gap-y-20 pt-10">
+                {news.map((item, index) => {
+                    return (
+                        <NewsCard data={item} index={index} key={item.slug} />
+                    );
+                })}
+            </div>
             <LacolinaComponent />
             <Logos />
             <HR />

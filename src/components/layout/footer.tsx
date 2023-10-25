@@ -34,7 +34,7 @@ export default function Footer() {
 
     return (
         <footer className="py-10 mt-10 text-sm border-t border-color main-width my-col-10">
-            <div className="my-col-5 sm:grid grid-cols-2 lg:grid-cols-4 gap-y-10 items-center">
+            <div className="my-col-5 sm:grid grid-cols-2 xl:grid-cols-4 gap-y-10 items-center">
                 <div className="relative aspect-[2.61] w-[136px] h-auto">
                     <Image
                         priority={true}
@@ -71,7 +71,7 @@ export default function Footer() {
                     <div>info@modungroup.com</div>
                 </a>
                 <div className="flex gap-x-2.5 items-center">
-                    <div>
+                    <div className="flex-shrink-0">
                         <Image
                             priority={true}
                             src={`/icons/${theme}/pin.svg`}
@@ -80,10 +80,7 @@ export default function Footer() {
                             height={24}
                         />
                     </div>
-                    <div>
-                        <div>{t("address.firstline")}</div>
-                        <div>{t("address.secondline")}</div>
-                    </div>
+                    <div className="break-keep">{t("address")}</div>
                 </div>
             </div>
 

@@ -22,7 +22,9 @@ export default function PageTitle({
                     {title?.toUpperCase()}
                 </div>
                 {subtitle ? (
-                    <div className="text-xs lg:text-base">{subtitle}</div>
+                    <div className="text-[14px] sm:text-[16px] lg:text-sm xl:text-base">
+                        {subtitle}
+                    </div>
                 ) : null}
             </div>
         </div>

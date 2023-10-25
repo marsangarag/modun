@@ -24,13 +24,13 @@ export default function HR() {
                     <div className="text-[24px] blue-text md:text-[32px] lg:text-[40px] xl:text-[72px] font-bold font-mont">
                         {t("hr.title")}
                     </div>
-                    <div className="text-[16px] blue-text">
+                    <div className="text-[16px] blue-text w-2/3">
                         {t("hr.subtitle")}
                     </div>
                     <div className="flex text-[16px] w-full lg:w-5/6">
                         <input
                             type="email"
-                            className="placeholder:text-[16px] w-full py-[15px] px-[30px] outline-none bg-[#f2f2f2] placeholder:text-black text-black"
+                            className="placeholder:text-[16px] w-full py-[15px] px-[30px] bg-[#f2f2f2] placeholder:text-black text-black"
                             placeholder={t("hr.placeholder")}
                         />
                         <input

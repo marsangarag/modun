@@ -34,7 +34,7 @@ export default function NewsCard({
             <div className="flex flex-col justify-between gap-y-5 items-start w-full md:w-1/2">
                 <div className="my-col-5 lg:gap-y-10">
                     <div className="text-big xl:text-bigger font-bold">
-                        {parse(t(`${data?.slug}.title`))}
+                        {parse(t(`${data?.slug}.title`).toUpperCase())}
                     </div>
                     <div className="text-sm line-clamp-2 lg:line-clamp-3 xl:line-clamp-4 text-justify">
                         {parse(t(`${data?.slug}.subtitle`))}
