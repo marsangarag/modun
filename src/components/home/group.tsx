@@ -1,6 +1,5 @@
 import { useTranslation } from "next-i18next";
 import Fade from "../animations/fade";
-import Image from "next/image";
 
 export default function Group() {
     const { t } = useTranslation("home");

@@ -7,10 +7,14 @@ export default function HR() {
     const { theme } = useThemeSwitcher();
 
     return (
-        <div className="flex flex-col md:flex-row md:items-center relative lg:mt-20">
-            <div className="hidden md:block absolute -right-20 top-1/2 -translate-y-1/2 w-auto aspect-[0.5] h-[150%]">
-                <Image src={`/icons/${theme}/ceo.svg`} alt="grid" fill />
-            </div>
+        <div className="flex flex-col overflow-y-visible md:flex-row md:items-center relative md:py-20">
+            <Image
+                src={`/icons/${theme}/ceo.svg`}
+                alt="grid"
+                width={100}
+                height={500}
+                className="hidden md:block right-0 top-1/2 -translate-y-1/2 absolute w-[10%] self-stretch overflow-hidden h-[200%] aspect-[0.5]"
+            />
             <div className="md:w-1/2 w-full relative h-full aspect-[1.58]">
                 <Image
                     src={"/images/hr.png"}

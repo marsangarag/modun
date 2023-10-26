@@ -372,3 +372,7 @@ video {
 .react-slideshow-container + ul.indicators .each-slideshow-indicator.active {
     @apply opacity-100 !important;
 }
+
+.overflow {
+    @apply overflow-x-hidden overflow-y-visible !important;
+}
