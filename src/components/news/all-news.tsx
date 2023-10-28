@@ -13,18 +13,16 @@ export default function AllNews({ detail = false }: { detail?: boolean }) {
                     className="text-huge"
                 />
             ) : null}
-            <div className="main-width my-col-10 md:gap-y-14">
-                <div className="my-col-20 md:flex-row justify-between flex-wrap">
-                    {news?.map((item, index: number) => {
-                        return (
-                            <NewsPageCard
-                                key={item.slug}
-                                index={index}
-                                data={item}
-                            />
-                        );
-                    })}
-                </div>
+            <div className="my-col-20 main-width">
+                {news?.map((item, index: number) => {
+                    return (
+                        <NewsPageCard
+                            key={item.slug}
+                            index={index}
+                            data={item}
+                        />
+                    );
+                })}
             </div>
         </>
     );

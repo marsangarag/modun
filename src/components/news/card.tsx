@@ -23,9 +23,9 @@ export default function NewsPageCard({
         <Fade
             direction={index % 2 === 0 ? "left" : "right"}
             delay={index * 0.1}
-            className="odd:md:pt-20 odd:lg:pt-40 flex flex-col gap-y-10 md:gap-y-[70px] basis-[48%] w-full max-w-[600px]"
+            className="my-col-10 md:flex-row items-stretch gap-x-20 justify-between"
         >
-            <div className="relative h-auto aspect-[0.85] w-full">
+            <div className="relative h-auto w-full md:w-1/2 aspect-[1.78]">
                 <Image
                     src={`/images/news/${data?.img}.png`}
                     alt={`${data?.img}-image`}
@@ -33,13 +33,17 @@ export default function NewsPageCard({
                     fill
                 />
             </div>
-            <div className="flex flex-col gap-y-5 items-start md:gap-y-[30px]">
-                <div className="font-bold text-big">
-                    {parse(t(`${data?.slug}.title`))}
+
+            <div className="my-col-10 items-start justify-between w-full md:w-1/2">
+                <div className="my-col-5 md:gap-y-[30px]">
+                    <div className="font-bold text-big">
+                        {parse(t(`${data?.slug}.title`))}
+                    </div>
+                    <div className="text-sm line-clamp-5 text-justify">
+                        {parse(t(`${data?.slug}.subtitle`))}
+                    </div>
                 </div>
-                <div className="text-sm line-clamp-2">
-                    {parse(t(`${data?.slug}.subtitle`))}
-                </div>
+
                 <div onClick={onMoreClick} className="my-button self-end">
                     {t("seemore")}
                 </div>

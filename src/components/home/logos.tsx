@@ -1,10 +1,8 @@
 import Ticker from "framer-motion-ticker";
 import Logo from "./logo";
 import { useState } from "react";
-import { useThemeSwitcher } from "@/lib/helper";
 
 export default function Logos() {
-    const { theme } = useThemeSwitcher();
     const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
     return (
@@ -15,11 +13,9 @@ export default function Logos() {
                 onMouseLeave={() => setIsPlaying(true)}
                 duration={35}
             >
-                {Array.from({ length: theme === "dark" ? 15 : 17 }).map(
-                    (_, index: number) => {
-                        return <Logo index={index} key={index} />;
-                    }
-                )}
+                {Array.from({ length: 8 }).map((_, index: number) => {
+                    return <Logo index={index} key={index} />;
+                })}
             </Ticker>
         </div>
     );
