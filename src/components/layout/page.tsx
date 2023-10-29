@@ -7,7 +7,7 @@ export default function Page({ children }: { children: any }) {
     const router = useRouter();
 
     return (
-        <div className="w-screen min-h-screen relative">
+        <div className="w-screen min-h-screen relative overflow-x-hidden md:overflow-x-visible">
             <Header />
             <motion.div
                 initial={{ opacity: 0 }}

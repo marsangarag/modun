@@ -59,6 +59,7 @@ export default function Header() {
                                 onChange={(e) =>
                                     setIsNavExpanded(e?.currentTarget?.checked)
                                 }
+                                checked={isNavExpanded}
                                 type="checkbox"
                                 id="check"
                             />
@@ -112,7 +113,7 @@ export default function Header() {
                     duration: 0.4,
                     background: { delay: isNavExpanded ? 0 : 0.2 },
                 }}
-                className={`w-screen fixed pt-20 overflow-hidden inset-0 z-40 flex flex-col ${
+                className={`w-screen font-mont fixed pt-20 overflow-hidden inset-0 z-40 flex flex-col ${
                     scrollPos > 80 ? "pt-[100px]" : "pt-20"
                 }`}
             >

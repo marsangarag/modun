@@ -17,8 +17,8 @@ export default function BusinessPage() {
     const arrow = (rotate?: boolean) => {
         return (
             <div
-                className={`relative w-4 h-4 md:w-6 md:h-6 xl:w-8 xl:h-8 mx-2.5 md:mx-5 ${
-                    rotate ? "rotate-180" : ""
+                className={`relative h-auto w-[2%] aspect-[0.34] mx-2.5 md:mx-5 opacity-50 ${
+                    rotate ? "" : "rotate-180"
                 }`}
             >
                 <Image src={"/icons/arrow.svg"} alt="prev-arrow" fill />
@@ -68,18 +68,23 @@ export default function BusinessPage() {
                     ))}
                 </Slide>
             </div>
-            <Fade
-                direction={direction}
-                myKey={selected.img}
-                className="main-width py-10 my-col-10 font-mont"
-            >
-                <div className="font-extrabold text-huge">
+            <div className="main-width py-10 my-col-10 font-mont">
+                <Fade
+                    direction={direction}
+                    myKey={selected.img}
+                    className="font-extrabold text-huge"
+                >
                     {t(`${selected.img}.title`)}
-                </div>
-                <div className="text-justify text-sm">
+                </Fade>
+                <Fade
+                    delay={0.2}
+                    direction={direction}
+                    myKey={selected.img}
+                    className="text-justify text-sm"
+                >
                     {parse(t(`${selected.img}.description`))}
-                </div>
-            </Fade>
+                </Fade>
+            </div>
         </>
     );
 }

@@ -97,6 +97,10 @@ input {
     -webkit-tap-highlight-color: transparent;
 }
 
+span {
+    @apply text-colina !important;
+}
+
 /* header burger menu */
 .hamburger {
     @apply absolute top-1/2 -translate-y-1/2 right-0 hidden;
@@ -199,7 +203,7 @@ input[type="checkbox"]:checked ~ span:nth-of-type(3) {
 }
 
 video {
-    clip-path: inset(1px 1px);
+    clip-path: inset(0px);
 }
 
 @layer base {
@@ -253,6 +257,11 @@ video {
     .news-border {
         border: 5px solid;
         border-image: linear-gradient(to bottom, #ec1d24, #0043d2) 1;
+    }
+
+    .colina-border {
+        border: 5px solid;
+        border-image: linear-gradient(to bottom, #e3a463, #0043d2) 1;
     }
 
     .gradient-border:hover,

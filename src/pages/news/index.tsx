@@ -21,7 +21,7 @@ export default function NewsPage() {
                 <div className="w-full md:w-[30%] italic text-huge text-center">
                     {t("title").toUpperCase()}
                 </div>
-                <div className=" h-auto aspect-[2.2] relative w-full md:w-[70%] -my-[5px] -mr-[5px]">
+                <div className="h-auto aspect-[2.2] relative w-full md:w-[70%] -mb-[5px] -mt-[5.6px] -mr-[6px]">
                     <Image src={"/images/news.png"} alt="news-header" fill />
                 </div>
             </div>
