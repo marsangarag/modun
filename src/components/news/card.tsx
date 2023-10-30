@@ -39,7 +39,7 @@ export default function NewsPageCard({
                     <div className="font-bold text-big">
                         {parse(t(`${data?.slug}.title`))}
                     </div>
-                    <div className="text-sm line-clamp-5 text-justify">
+                    <div className="text-sm  line-clamp-5 text-justify">
                         {parse(t(`${data?.slug}.subtitle`))}
                     </div>
                 </div>

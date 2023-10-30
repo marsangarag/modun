@@ -1,6 +1,8 @@
+import Map from "@/components/hr/map";
 import Advantages from "@/components/lacolina/advantages";
 import Brands from "@/components/lacolina/brands";
 import ColinaCard from "@/components/lacolina/card";
+import Contacts from "@/components/lacolina/contacts";
 import LacolinaHero from "@/components/lacolina/hero";
 import ColinaIntro from "@/components/lacolina/intro";
 import ColinaMidHero from "@/components/lacolina/mid-hero";
@@ -14,7 +16,7 @@ export default function LaColinaPage() {
             <video loop autoPlay muted playsInline>
                 <source src="/video/lacolina.mp4" />
             </video>
-            <div className="main-width my-col-10 md:gap-y-36 py-10 md:py-36">
+            <div className="main-width my-col-10 md:gap-y-20 py-10 md:py-36">
                 <ColinaIntro />
                 <Advantages />
                 <ColinaCard pos="left" myKey="eco" />
@@ -22,9 +24,13 @@ export default function LaColinaPage() {
             </div>
             <ColinaMidHero />
             <Rooms />
-            <div className="main-width my-col-10 md:gap-y-36">
+            <div className="main-width my-col-10 md:gap-y-20">
                 <ColinaCard pos="right" myKey="time" />
                 <Brands />
+                <Contacts />
+            </div>
+            <div className="py-10 md:py-36">
+                <Map />
             </div>
         </>
     );

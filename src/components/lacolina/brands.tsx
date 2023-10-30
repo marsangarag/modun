@@ -19,8 +19,8 @@ export default function Brands() {
     const { theme } = useThemeSwitcher();
 
     return (
-        <div className="my-col-5 md:gap-y-10">
-            <TitleAnimation text={t(`brands.title`).toUpperCase()} />
+        <div className="my-col-10 md:gap-y-20">
+            <TitleAnimation lacolina text={t(`brands.title`).toUpperCase()} />
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 place-items-center gap-5">
                 {brands.map((brand, index) => {
                     return (

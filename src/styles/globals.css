@@ -317,6 +317,14 @@ video {
     .my-button:hover {
         @apply bg-reverse text-white dark:text-blue shadow-none;
     }
+
+    .line-clamp-2,
+    .line-clamp-3,
+    .line-clamp-5,
+    .line-clamp-4 {
+        display: -webkit-box !important;
+        text-overflow: ellipsis !important;
+    }
 }
 
 .my-col-5 {

@@ -37,7 +37,7 @@ export default function ColinaCard({
                     src={`/images/lacolina/${myKey}.png`}
                     alt={`${myKey}-image`}
                     fill
-                    className="object-cover"
+                    className={`object-cover object-${pos}`}
                 />
             </div>
         </Fade>

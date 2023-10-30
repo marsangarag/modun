@@ -57,7 +57,7 @@ export default function BusinessPage() {
                     {businesses.map((business) => (
                         <div
                             key={business.slug}
-                            className="w-screen h-full aspect-[2] md:aspect-[3]"
+                            className="w-screen h-full aspect-[2] md:aspect-[2.5]"
                             style={{
                                 backgroundImage: `url(/images/business/${business.img}.png)`,
                                 backgroundSize: "cover",

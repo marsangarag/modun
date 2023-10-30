@@ -40,6 +40,7 @@ export default function Footer() {
             pathname: "/hr",
             mail: "hr@modungroup.mn",
         },
+        { pathname: "/la-colina", mail: "sales@modungroup.mn" },
     ];
 
     const phoneNo =
