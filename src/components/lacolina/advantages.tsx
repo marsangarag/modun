@@ -10,7 +10,7 @@ export default function Advantages() {
     return (
         <>
             <TitleAnimation
-                className="sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[64px] font-extrabold"
+                className="text-big font-extrabold"
                 lacolina={true}
                 text={t("advantages.title").toUpperCase()}
             />

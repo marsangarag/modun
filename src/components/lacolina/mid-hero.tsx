@@ -10,7 +10,7 @@ export default function ColinaMidHero() {
                     theme === "light" ? "colina" : "4"
                 }.png`}
                 alt="colina-logo"
-                width={353}
+                width={200}
                 height={195}
                 className="self-center"
             />

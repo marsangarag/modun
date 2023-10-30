@@ -1,4 +1,5 @@
 import Advantages from "@/components/lacolina/advantages";
+import Brands from "@/components/lacolina/brands";
 import ColinaCard from "@/components/lacolina/card";
 import LacolinaHero from "@/components/lacolina/hero";
 import ColinaIntro from "@/components/lacolina/intro";
@@ -21,6 +22,10 @@ export default function LaColinaPage() {
             </div>
             <ColinaMidHero />
             <Rooms />
+            <div className="main-width my-col-10 md:gap-y-36">
+                <ColinaCard pos="right" myKey="time" />
+                <Brands />
+            </div>
         </>
     );
 }

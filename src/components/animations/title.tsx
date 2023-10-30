@@ -19,7 +19,7 @@ export default function TitleAnimation({
         >
             {text}
             <motion.div
-                initial={{ x: "200%" }}
+                initial={{ x: "100%%" }}
                 whileInView={{ x: "0%" }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}

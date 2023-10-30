@@ -20,6 +20,9 @@ const config: Config = {
                 84: "84px",
                 biggest: "92px",
             },
+            screens: {
+                sm: "540px",
+            },
         },
     },
     plugins: [],

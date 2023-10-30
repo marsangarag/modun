@@ -9,7 +9,7 @@ export default function ColinaIntro() {
     return (
         <>
             <TitleAnimation
-                className="sm:text-[32px] md:text-[40px] lg:text-[48px] xl:text-[64px] font-extrabold"
+                className="text-big font-extrabold"
                 lacolina={true}
                 text={t("intro.title").toUpperCase()}
             />
@@ -30,7 +30,9 @@ export default function ColinaIntro() {
                         className="absolute right-0 bottom-0 w-3/4 h-3/4"
                     />
                 </div>
-                <div className="text-justify">{parse(t("intro.text"))}</div>
+                <div className="text-justify text-sm">
+                    {parse(t("intro.text"))}
+                </div>
             </div>
         </>
     );
