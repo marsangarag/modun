@@ -71,6 +71,11 @@
     src: local("MyFont"), url(./fonts/DMSans/DMSans-Bold.ttf) format("truetype");
     font-style: bold;
 }
+@font-face {
+    font-family: "Lustria";
+    font-weight: 400;
+    src: local("MyFont"), url(./fonts/Lustria.ttf) format("truetype");
+}
 
 body {
     text-size-adjust: none !important;
@@ -89,6 +94,10 @@ body {
     scroll-padding: 0;
     @apply font-normal text-base text-black dark:text-white transition-all duration-150 ease-linear background-color overflow-y-scroll;
     outline: none;
+}
+
+.lustria {
+    font-family: "Lustria" !important;
 }
 
 input {
@@ -391,6 +400,29 @@ video {
     @apply opacity-100 !important;
 }
 
-.overflow {
-    @apply overflow-x-hidden overflow-y-visible !important;
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    @apply text-black/80 text-huge font-bold !important;
+}
+.swiper-button-next,
+.swiper-button-prev {
+    @apply z-50 !important;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal,
+.swiper-pagination-custom,
+.swiper-pagination-fraction {
+    @apply -bottom-10 !important;
+}
+
+.swiper {
+    overflow: visible !important;
+}
+.swiper-pagination-bullet {
+    background: rgba(0, 0, 0, 0.5);
+    @apply h-2.5 w-2.5 !important;
+}
+.swiper-pagination-bullet-active {
+    background: black !important;
 }

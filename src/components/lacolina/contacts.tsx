@@ -1,7 +1,7 @@
 import { useTranslation } from "next-i18next";
 import TitleAnimation from "../animations/title";
 import Image from "next/image";
-import { AddressBlue, CallRed, FacebookBlue, MailRed } from "../icons";
+import { Address, Call, FacebookGrad, Mail } from "../icons";
 
 export default function Contacts() {
     const { t } = useTranslation("lacolina");
@@ -10,7 +10,7 @@ export default function Contacts() {
             <TitleAnimation lacolina text={t("contacts.title").toUpperCase()} />
             <div className="my-col-5 md:flex-row justify-between items-stretch border-0 md:border-[5px] colina-border">
                 <div
-                    className={`h-auto aspect-[1.77] relative w-full -my-[5px] -ml-[5px]`}
+                    className={`h-auto aspect-[2] relative w-full -my-[5px] -ml-[5px]`}
                 >
                     <Image
                         src={`/images/lacolina/hr.png`}
@@ -18,6 +18,11 @@ export default function Contacts() {
                         fill
                         className={`object-cover`}
                     />
+                    <div className="absolute w-full h-full inset-0 bg-white/[0.35]"></div>
+                    <div className="absolute center text-colina text-center w-full">
+                        <div className="lustria text-biggest">La Colina</div>
+                        <div className="font-mont -mt-5 text-big">хотхон</div>
+                    </div>
                 </div>
                 <div className="w-full font-mont my-col-5 md:my-col-10 items-start self-center text-sm p-5 md:p-10 colina-border md:border-0">
                     <a
@@ -25,7 +30,7 @@ export default function Contacts() {
                         className="flex cursor-pointer gap-x-5 md:gap-x-10 items-center"
                     >
                         <div>
-                            <CallRed />
+                            <Call />
                         </div>
                         <div>99338802, 88114682, 88884682, 80114682</div>
                     </a>
@@ -34,7 +39,7 @@ export default function Contacts() {
                         className="flex cursor-pointer gap-x-5 md:gap-x-10 items-center"
                     >
                         <div>
-                            <MailRed />
+                            <Mail />
                         </div>
                         <div>sales@modungroup.mn</div>
                     </a>
@@ -44,13 +49,13 @@ export default function Contacts() {
                         className="flex cursor-pointer gap-x-5 md:gap-x-10 items-center"
                     >
                         <div>
-                            <FacebookBlue />
+                            <FacebookGrad />
                         </div>
                         <div>{t("contacts.facebook")}</div>
                     </a>
                     <div className="flex gap-x-5 md:gap-x-10 items-center">
                         <div>
-                            <AddressBlue />
+                            <Address />
                         </div>
                         <div> {t("contacts.address")}</div>
                     </div>

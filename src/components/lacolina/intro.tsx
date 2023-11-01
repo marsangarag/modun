@@ -61,6 +61,7 @@ export default function ColinaIntro() {
                         <Image
                             src={"/images/lacolina/page-bg.png"}
                             alt="intro-bg"
+                            className="object-cover"
                             fill
                         />
                     </div>
@@ -69,7 +70,7 @@ export default function ColinaIntro() {
                         alt="intro-pic"
                         width={577}
                         height={0}
-                        className="absolute right-0 bottom-0 w-3/4 h-3/4 -mb-[5px]"
+                        className="absolute right-0 bottom-0 w-3/4 h-3/4 object-cover md:-mb-[5px]"
                     />
                 </div>
                 <div className="w-full my-col-5 md:my-col-10 p-5 md:p-10 colina-border md:border-0">
