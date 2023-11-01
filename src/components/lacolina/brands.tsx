@@ -20,16 +20,16 @@ export default function Brands() {
 
     return (
         <div className="my-col-10 md:gap-y-20">
-            <TitleAnimation lacolina text={t(`brands.title`).toUpperCase()} />
+            <TitleAnimation
+                className="font-extrabold"
+                lacolina
+                text={t(`brands.title`).toUpperCase()}
+            />
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 place-items-center gap-5">
                 {brands.map((brand, index) => {
                     return (
                         <Fade
-                            className={`rounded-[20px] relative w-full aspect-[1.19] h-auto group bg-gradient ${
-                                theme === "dark"
-                                    ? "reverse-border-blue"
-                                    : "reverse-border"
-                            }`}
+                            className={`rounded-[20px] relative w-full aspect-[1.19] h-auto group bg-gradient-to-b from-colina to-blue hover:bg-none reverse-border`}
                             delay={index * 0.1}
                             direction="right"
                             key={brand}

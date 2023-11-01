@@ -6,7 +6,7 @@ export default function Logos() {
     const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
     return (
-        <div className="py-10 relative border-t border-b border-color">
+        <div className="py-5 relative border-t border-b border-color">
             <Ticker
                 isPlaying={isPlaying}
                 onMouseEnter={() => setIsPlaying(false)}

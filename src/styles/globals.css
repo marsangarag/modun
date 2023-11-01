@@ -255,11 +255,6 @@ video {
         mask-composite: exclude;
     }
 
-    .news-border {
-        border: 5px solid;
-        border-image: linear-gradient(to bottom, #ec1d24, #0043d2) 1;
-    }
-
     .colina-border {
         border: 5px solid;
         border-image: linear-gradient(to bottom, #e3a463, #0043d2) 1;
@@ -278,17 +273,13 @@ video {
         background: none !important;
     }
 
-    .reverse-border-blue {
-        @apply hover:border-blue border-2 border-black;
-    }
-
     .reverse-border:hover::before {
         content: "";
         position: absolute;
         inset: 0;
         border-radius: 20px;
         padding: 5px;
-        background: linear-gradient(to bottom, #ec1d24, #0043d2);
+        background: linear-gradient(to bottom, #e3a463, #0043d2);
         -webkit-mask: linear-gradient(to bottom, white, white) content-box,
             linear-gradient(to bottom, white, white);
         -webkit-mask-composite: xor;
@@ -316,14 +307,6 @@ video {
     }
     .my-button:hover {
         @apply bg-reverse text-white dark:text-blue shadow-none;
-    }
-
-    .line-clamp-2,
-    .line-clamp-3,
-    .line-clamp-5,
-    .line-clamp-4 {
-        display: -webkit-box !important;
-        text-overflow: ellipsis !important;
     }
 }
 

@@ -33,7 +33,7 @@ export default function BusinessPage() {
 
     return (
         <>
-            <div className="relative h-full w-full md:mt-20 mt-0 cursor-grab">
+            <div className="relative h-full w-full md:mt-0 cursor-grab">
                 <Slide
                     {...arrows}
                     onStartChange={(firstIndex, lastIndex) => {

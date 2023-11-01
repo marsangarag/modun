@@ -16,20 +16,7 @@ export default function ColinaMidHero() {
                 height={195}
                 className="self-center"
             />
-            <div className="absolute hidden md:block left-0 top-[5%]   h-full w-1/6">
-                <Image
-                    src={`/images/lacolina/grid.png`}
-                    alt="colina-grid"
-                    fill
-                />
-            </div>
-            <div className="absolute hidden md:block right-0 rotate-180 top-[5%]  h-full w-1/6">
-                <Image
-                    src={`/images/lacolina/grid.png`}
-                    alt="colina-grid"
-                    fill
-                />
-            </div>
+
             <div className="relative h-full w-full md:mt-20 mt-0 cursor-grab">
                 <Slide
                     cssClass="relative"

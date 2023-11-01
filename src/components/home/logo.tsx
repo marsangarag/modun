@@ -9,7 +9,7 @@ export default function Logo({ index }: { index: number }) {
     return (
         <div
             onClick={onLogoClick}
-            className="relative aspect-square w-[200px] h-auto cursor-pointer mx-10"
+            className="relative  aspect-square w-[100px] h-auto cursor-pointer mx-10"
         >
             <img
                 className="absolute center object-cover"

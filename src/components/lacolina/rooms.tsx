@@ -34,12 +34,14 @@ export default function Rooms() {
         return () => resizeObserver.disconnect();
     }, [onResize]);
 
-    const { scrollYProgress } = useScroll({ target: targetRef });
+    const { scrollYProgress } = useScroll({
+        target: targetRef,
+    });
 
     const transform = useTransform(
         scrollYProgress,
         [0, 1],
-        [0, -scrollRange + viewport]
+        [(viewport * 8.35) / 100, -scrollRange + viewport * 0.9165]
     );
 
     const physics = { damping: 15, mass: 0.27, stiffness: 55 };

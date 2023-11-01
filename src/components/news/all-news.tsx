@@ -14,7 +14,7 @@ export default function AllNews({ detail = false }: { detail?: boolean }) {
                 />
             ) : null}
             <div className="my-col-20 main-width">
-                {news?.map((item, index: number) => {
+                {news?.reverse().map((item, index: number) => {
                     return (
                         <NewsPageCard
                             key={item.slug}

@@ -36,9 +36,9 @@ export default function NewsCard({
                     <div className="text-big xl:text-bigger font-bold">
                         {parse(t(`${data?.slug}.title`).toUpperCase())}
                     </div>
-                    <div className="text-sm line-clamp-2 lg:line-clamp-3 md:pl-5 xl:line-clamp-4 text-justify relative">
+                    <div className="text-sm md:pl-5  text-justify relative">
                         <div className="absolute hidden md:block left-0 top-2 bg-blue w-0.5 h-[calc(100%-12px)]"></div>
-                        {parse(t(`${data?.slug}.subtitle`))}
+                        {t(`${data?.slug}.desc`)}
                     </div>
                 </div>
                 <div onClick={onMoreClick} className="my-button">
