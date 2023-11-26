@@ -1,9 +1,11 @@
 import Ticker from "framer-motion-ticker";
 import Logo from "./logo";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Logos() {
     const [isPlaying, setIsPlaying] = useState<boolean>(true);
+
+    const logoArray = [0, 4, 1, 6, 2, 5, 3, 6, 7, 8];
 
     return (
         <div className="py-5 relative border-t border-b border-color">
@@ -13,8 +15,8 @@ export default function Logos() {
                 onMouseLeave={() => setIsPlaying(true)}
                 duration={35}
             >
-                {Array.from({ length: 8 }).map((_, index: number) => {
-                    return <Logo index={index} key={index} />;
+                {logoArray.map((_) => {
+                    return <Logo index={_} key={_} />;
                 })}
             </Ticker>
         </div>

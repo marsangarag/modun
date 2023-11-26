@@ -29,7 +29,7 @@ export default function Home() {
             </Fade>
             <GroupInfo />
             <Ceo />
-            <div className="main-width lg:grid lg:grid-cols-3 my-col-10 gap-x-5">
+            <div className="main-width md:grid grid-cols-3 my-col-5 items-center gap-x-5">
                 {Array.from({ length: 3 }).map((_, index) => {
                     return <SloganCard key={index} index={index} />;
                 })}

@@ -377,7 +377,7 @@ video {
 } */
 
 .slogan-card {
-    @apply aspect-[1.1] w-full h-auto;
+    @apply aspect-[1.5] md:w-full md:h-auto w-[250px] h-[250px];
 }
 
 .react-slideshow-container + .indicators {

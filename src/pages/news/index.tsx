@@ -12,7 +12,7 @@ export default function NewsPage() {
             <div
                 className={`main-width my-col-10 md:flex-row justify-between items-center border-0 md:border-color md:border-[5px]`}
             >
-                <div className="w-full md:w-[30%] italic text-huge text-center">
+                <div className="w-full md:w-[30%] px-5 italic text-bigger font-medium text-center">
                     {t("title").toUpperCase()}
                 </div>
                 <div className="h-auto aspect-[2.2] relative w-full md:w-[70%] -my-[5px] -mr-[6px]">

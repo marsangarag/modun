@@ -22,13 +22,17 @@ export default function Ceo() {
                             >
                                 {t("ceo.title").toUpperCase()}
                             </Fade>
-                            <Fade
-                                delay={0.2}
-                                direction="left"
-                                className="text-justify text-sm"
-                            >
-                                {t("ceo.text")}
-                            </Fade>
+                            <div className="text-justify text-sm my-col-5 lg:gap-y-10">
+                                <Fade delay={0.2} direction="left">
+                                    {t("ceo.text.1")}
+                                </Fade>
+                                <Fade delay={0.3} direction="left">
+                                    {t("ceo.text.2")}
+                                </Fade>
+                                <Fade delay={0.4} direction="left">
+                                    {t("ceo.text.3")}
+                                </Fade>
+                            </div>
                             <Fade direction="right">
                                 <Image
                                     className="mx-auto"

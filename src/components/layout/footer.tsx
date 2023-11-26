@@ -3,27 +3,31 @@ import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Facebook, Instagram, Twitter, Youtube } from "../icons";
+import { useState } from "react";
 
 export default function Footer() {
     const { t } = useTranslation("footer");
     const router = useRouter();
     const { pathname } = router;
     const { theme } = useThemeSwitcher();
+    const [hoveredIcon, setHoveredIcon] = useState<number | null>(null);
+    const [logoHover, setLogoHover] = useState<boolean | null>(false);
+
     const icons = [
         {
-            icon: <Instagram fill={theme === "dark"} />,
+            icon: Instagram,
             route: "https://www.facebook.com/modungroup",
         },
         {
-            icon: <Facebook fill={theme === "dark"} />,
+            icon: Facebook,
             route: "https://www.facebook.com/modungroup",
         },
         {
-            icon: <Youtube fill={theme === "dark"} />,
+            icon: Youtube,
             route: "https://www.facebook.com/modungroup",
         },
         {
-            icon: <Twitter fill={theme === "dark"} />,
+            icon: Twitter,
             route: "https://www.facebook.com/modungroup",
         },
     ];
@@ -56,17 +60,24 @@ export default function Footer() {
     };
 
     return (
-        <footer className="py-10 mt-10 text-sm border-t border-color main-width my-col-10">
+        <footer className="py-10 mt-10 text-sm border-t-2 border-blue  main-width my-col-10">
             <div className="my-col-5 sm:grid grid-cols-2 xl:grid-cols-4 gap-y-10 items-center">
-                <div className="relative aspect-[2.61] w-[136px] h-auto">
+                <div
+                    onMouseOver={() => setLogoHover(true)}
+                    onMouseLeave={() => setLogoHover(false)}
+                    className="relative cursor-pointer aspect-[2.61] w-[136px] h-auto"
+                >
                     <Image
                         priority={true}
                         src={
-                            theme === "dark"
+                            logoHover
+                                ? "/images/light/logo.png"
+                                : theme === "dark"
                                 ? "/images/dark/logo.png"
                                 : `/images/light/footer.png`
                         }
                         alt="footer-logo"
+                        className="group"
                         fill
                     />
                 </div>
@@ -105,13 +116,20 @@ export default function Footer() {
             </div>
 
             <div className="flex items-center mx-auto text-center gap-x-5">
-                {icons?.map((icon) => (
+                {icons?.map((icon, index) => (
                     <div
+                        onMouseOver={() => setHoveredIcon(index)}
+                        onMouseLeave={() => setHoveredIcon(null)}
                         onClick={() => onSocialMediaClick(icon.route)}
-                        className="cursor-pointer bg-black dark:bg-white rounded-full p-2"
-                        key={icon.route}
+                        className="cursor-pointer hover:bg-black dark:hover:bg-white group rounded-full p-2"
+                        key={icon.route + index}
                     >
-                        {icon.icon}
+                        <icon.icon
+                            fill={
+                                (index !== hoveredIcon && theme === "light") ||
+                                (theme === "dark" && index === hoveredIcon)
+                            }
+                        />
                     </div>
                 ))}
             </div>

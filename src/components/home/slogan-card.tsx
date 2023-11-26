@@ -11,7 +11,7 @@ export default function SloganCard({ index }: { index: number }) {
         <Fade
             delay={index * 0.1}
             direction="right"
-            className={`slogan-card rounded-3xl group hover:bg-gradient-to-b from-blue to-red dark:to-black ${
+            className={`slogan-card rounded-3xl group text-center hover:bg-gradient-to-b from-blue to-red dark:to-black ${
                 theme === "dark"
                     ? "blue-border"
                     : "gradient-border hover:no-border"
