@@ -16,10 +16,15 @@ export default function HR() {
                     {t("subtitle").toUpperCase()}
                 </div>
             </div>
-            <div className="relative main-width font-mont text-big">
-                <div className="absolute hidden sm:block -left-5 top-2 bg-blue w-0.5 h-[calc(100%-12px)]"></div>
-                {parse(t("invite"))}
+            <div className="main-width my-col-5 font-mont text-justify">
+                <div className="text-bigger font-extrabold ">{t("intro")}</div>
+                <div className="relative text-big my-col-5">
+                    <div className="absolute hidden sm:block -left-5 top-2 bg-blue w-0.5 h-[calc(100%-12px)]"></div>
+                    {parse(t("invite"))}
+                </div>
+                <div className="md:pt-16">{parse(t("zangia"))}</div>
             </div>
+            <div className="main-width my-col-5 md:gap-y-10"></div>
             <TitleAnimation
                 text={t("caption").toUpperCase()}
                 className="text-bigger font-extrabold my-10"

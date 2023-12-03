@@ -5,7 +5,7 @@ export default function HrForm() {
     const { t } = useTranslation("hr");
     return (
         <div className="my-col-10 md:flex-row justify-between main-width md:items-stretch">
-            <div className="w-full md:w-2/5 h-auto aspect-video relative rounded-3xl overflow-hidden">
+            <div className="w-full md:w-[45%] h-auto aspect-video relative">
                 <Image
                     src={"/images/banner-form.png"}
                     className="object-cover"
