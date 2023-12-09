@@ -426,3 +426,17 @@ video {
 .swiper-pagination-bullet-active {
     background: black !important;
 }
+
+img {
+    user-drag: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+    padding-left: 8.35% !important;
+    padding-right: 8.35% !important;
+}

@@ -32,7 +32,7 @@ export default function ColinaIntro() {
                     />
                 </div>
                 <div className="main-width my-col-10 justify-between md:flex-row items-center">
-                    <div className="w-full md:w-1/2 max-w-[361px] mx-auto aspect-[1.81] relative">
+                    <div className="w-full md:w-1/2 max-w-[353px] mx-auto aspect-[1.81] relative">
                         <Image
                             src={`/images/logos/${theme}/colina.png`}
                             alt="colina-logo"
