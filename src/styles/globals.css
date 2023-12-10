@@ -402,11 +402,11 @@ video {
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-    @apply text-black/80 text-huge font-bold !important;
+    @apply text-black/60 text-huge font-bold  !important;
 }
 .swiper-button-next,
 .swiper-button-prev {
-    @apply z-50 !important;
+    @apply z-[51] !important;
 }
 
 .swiper-horizontal > .swiper-pagination-bullets,
