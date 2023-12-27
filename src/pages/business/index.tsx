@@ -68,22 +68,25 @@ export default function BusinessPage() {
                     ))}
                 </Slide>
             </div>
-            <div className="main-width py-10 my-col-10 font-mont">
-                <Fade
-                    direction={direction}
-                    myKey={selected.img}
-                    className="font-extrabold text-huge"
-                >
-                    {t(`${selected.img}.title`)}
-                </Fade>
-                <Fade
-                    delay={0.2}
-                    direction={direction}
-                    myKey={selected.img}
-                    className="text-justify text-sm"
-                >
-                    {parse(t(`${selected.img}.description`))}
-                </Fade>
+            <div className="main-width py-10 my-col-10 md:gap-y-20 font-mont">
+                <div className="my-col-5 md:gap-y-10">
+                    <Fade
+                        direction={direction}
+                        myKey={selected.img}
+                        className="font-extrabold text-huge"
+                    >
+                        {t(`${selected.img}.title`)}
+                    </Fade>
+                    <Fade
+                        delay={0.2}
+                        direction={direction}
+                        myKey={selected.img}
+                        className="text-justify text-sm"
+                    >
+                        {parse(t(`${selected.img}.description`))}
+                    </Fade>
+                </div>
+                {selected?.content ? <selected.content /> : null}
             </div>
         </>
     );
