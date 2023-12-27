@@ -20,7 +20,7 @@ export default function Advantages() {
                 lacolina={true}
                 text={t("advantages.title").toUpperCase()}
             />
-            <div className="w-full md:w-2/3 mx-auto h-full overflow-hidden">
+            <div className="w-full mx-auto h-full overflow-hidden">
                 <Swiper
                     modules={[
                         Autoplay,
@@ -29,8 +29,8 @@ export default function Advantages() {
                         EffectCoverflow,
                     ]}
                     effect="coverflow"
-                    className="mb-10"
-                    slidesPerView={4}
+                    className="mb-10 relative"
+                    slidesPerView={3}
                     grabCursor
                     spaceBetween={-50}
                     pagination={{ clickable: true }}
@@ -41,7 +41,7 @@ export default function Advantages() {
                     coverflowEffect={{
                         slideShadows: false,
                         rotate: 0,
-                        modifier: 0.5,
+                        modifier: 2,
                         depth: 250,
                     }}
                     onActiveIndexChange={({ realIndex }) =>
@@ -49,6 +49,8 @@ export default function Advantages() {
                     }
                     loop
                 >
+                    <div className="absolute top-0 left-0 h-full w-1/4 bg-gradient-to-r from-white to-transparent z-50"></div>
+                    <div className="absolute top-0 right-0 h-full w-1/4 bg-gradient-to-l from-white to-transparent z-50"></div>
                     {Array.from({ length: 18 }).map((card, index) => {
                         return (
                             <SwiperSlide
