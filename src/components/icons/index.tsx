@@ -111,8 +111,8 @@ export function Call() {
                     y2="31.1111"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#0043D2" />
-                    <stop offset="1" stop-color="#D9A87D" />
+                    <stop stopColor="#0043D2" />
+                    <stop offset="1" stopColor="#D9A87D" />
                 </linearGradient>
             </defs>
         </svg>
@@ -141,8 +141,8 @@ export function Mail() {
                     y2="23"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#0043D2" />
-                    <stop offset="1" stop-color="#D9A87D" />
+                    <stop stopColor="#0043D2" />
+                    <stop offset="1" stopColor="#D9A87D" />
                 </linearGradient>
             </defs>
         </svg>
@@ -171,8 +171,8 @@ export function FacebookGrad() {
                     y2="37"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#0043D2" />
-                    <stop offset="1" stop-color="#D9A87D" />
+                    <stop stopColor="#0043D2" />
+                    <stop offset="1" stopColor="#D9A87D" />
                 </linearGradient>
             </defs>
         </svg>
@@ -201,8 +201,8 @@ export function Address() {
                     y2="40"
                     gradientUnits="userSpaceOnUse"
                 >
-                    <stop stop-color="#0043D2" />
-                    <stop offset="1" stop-color="#E7AF77" />
+                    <stop stopColor="#0043D2" />
+                    <stop offset="1" stopColor="#E7AF77" />
                 </linearGradient>
             </defs>
         </svg>

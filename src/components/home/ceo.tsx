@@ -48,15 +48,15 @@ export default function Ceo() {
                             delay={0.3}
                             className="relative rounded-xl h-auto w-full lg:w-[43%] aspect-[0.72] overflow-hidden"
                         >
-                            <Image src={"/images/ceo.jpg"} alt="ceo" fill />
-                            <div className="absolute font-mont text-white bottom-10 right-10">
+                            <Image src={"/images/ceo.png"} alt="ceo" fill />
+                            {/* <div className="absolute font-mont text-white bottom-10 right-10">
                                 <div className="text-big">
                                     {t("ceo.name").toUpperCase()}
                                 </div>
                                 <div className="text-[10px]">
                                     {t("ceo.position").toUpperCase()}
                                 </div>
-                            </div>
+                            </div> */}
                         </Fade>
                     </div>
                 </div>
