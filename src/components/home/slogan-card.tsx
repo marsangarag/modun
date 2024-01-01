@@ -28,7 +28,7 @@ export default function SloganCard({ index }: { index: number }) {
                     {t(`slogans.${index + 1}.title`)}
                 </div>
             </div>
-            <div className="text-center text-white text-sm w-3/4 opacity-0 transition-all duration-300 group-hover:opacity-100 absolute center">
+            <div className="text-center text-white text-[14px] lg:text-sm  w-3/4 opacity-0 transition-all duration-300 group-hover:opacity-100 absolute center">
                 {t(`slogans.${index + 1}.text`)}
             </div>
         </Fade>

@@ -278,6 +278,11 @@ video {
         @apply border-blue border-2 hover:border-none;
     }
 
+    .news-border {
+        border: 2px solid;
+        border-image: linear-gradient(to bottom, #0043d2, #ec1d24) 1;
+    }
+
     .gradient-border:hover::before {
         background: none !important;
     }

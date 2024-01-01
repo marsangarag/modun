@@ -9,14 +9,14 @@ export default function HR() {
     return (
         <div className="relative md:py-20">
             <Image
-                src={`/icons/${theme}/ceo.svg`}
+                src={`/icons/gradientgrid.svg`}
                 alt="grid"
                 width={100}
                 height={500}
-                className="hidden md:block right-0 top-1/2 -translate-y-1/2 absolute w-auto self-stretch overflow-hidden h-[110%] aspect-[0.5]"
+                className="hidden md:block right-0 top-1/2 -translate-y-1/2 absolute w-auto self-stretch overflow-hidden h-[110%] aspect-[0.58]"
             />
-            <div className="flex flex-col overflow-y-visible md:flex-row md:items-center w-full md:w-5/6">
-                <div className="md:w-1/2 w-full relative h-full aspect-[1.58]">
+            <div className="flex flex-col main-width overflow-y-visible md:flex-row md:items-center w-full md:w-5/6">
+                <div className="w-full max-w-[50%] relative h-full aspect-[1.12]">
                     <Image
                         src={"/images/hr.png"}
                         alt="hr"
@@ -24,12 +24,12 @@ export default function HR() {
                         fill
                     />
                 </div>
-                <div className="relative w-full md:w-1/2 h-full py-10 md:py-0">
-                    <div className="my-col-5 lg:gap-y-10 w-4/5 mx-auto">
-                        <div className="text-big font-bold">
+                <div className="relative w-full max-w-[50%] h-full py-10 md:py-0">
+                    <div className="my-col-5 lg:gap-y-10 w-4/5 lg:w-full mx-auto lg:ml-[8%]">
+                        <div className="text-big font-bold text-blue w-full text-center">
                             {t("hr.caption").toUpperCase()}
                         </div>
-                        <div className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[72px] font-medium font-mont">
+                        <div className="text-[24px] md:text-[32px] lg:text-[40px] xl:text-[72px] text-blue font-medium font-mont text-center">
                             {t("hr.title").toUpperCase()}
                         </div>
                         <div className="text-[16px] w-2/3">

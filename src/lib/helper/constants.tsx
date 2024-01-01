@@ -3,8 +3,8 @@ import MainBusiness from "@/components/business/main";
 export const routerStack = ["/", "/business", "/news", "/hr", "/lacolina"];
 
 export const news = [
-    { slug: "anniversary", img: "1" },
     { slug: "rich-experience", img: "0" },
+    { slug: "anniversary", img: "1" },
 ];
 
 export const businesses = [

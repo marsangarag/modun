@@ -5,6 +5,7 @@ import TitleAnimation from "../animations/title";
 
 export default function AllNews({ detail = false }: { detail?: boolean }) {
     const { t } = useTranslation("news");
+
     return (
         <>
             {detail ? (
@@ -14,7 +15,7 @@ export default function AllNews({ detail = false }: { detail?: boolean }) {
                 />
             ) : null}
             <div className="my-col-20 main-width">
-                {news?.reverse().map((item, index: number) => {
+                {news?.map((item, index: number) => {
                     return (
                         <NewsPageCard
                             key={item.slug}

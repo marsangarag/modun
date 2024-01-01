@@ -15,7 +15,7 @@ export default function NewsPage() {
                 <div className="w-full md:w-[30%] px-5 italic text-bigger font-medium text-center">
                     {t("title").toUpperCase()}
                 </div>
-                <div className="h-auto aspect-[2.2] relative w-full md:w-[70%] -my-[5px] -mr-[6px]">
+                <div className="h-auto aspect-[2.1] relative w-full md:w-[70%] -my-[5px] -mr-[6px]">
                     <Image src={"/images/news.png"} alt="news-header" fill />
                 </div>
             </div>
@@ -32,6 +32,6 @@ export default function NewsPage() {
 
 export const getStaticProps = async ({ locale }: { locale: string }) => ({
     props: {
-        ...(await serverSideTranslations(locale, ["header", "footer", "news"])),
+        ...(await serverSideTranslations(locale, ["news", "header", "footer"])),
     },
 });

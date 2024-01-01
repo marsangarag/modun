@@ -14,7 +14,7 @@ export default function Ceo() {
                 </div>
                 <div className="main-width  my-col-5 md:gap-y-10 relative">
                     <div className="flex flex-col gap-10 justify-between items-center w-full h-full lg:flex-row">
-                        <div className="my-col-5 md:gap-y-10 lg:w-[57%] w-full">
+                        <div className="my-col-5 md:gap-y-10 lg:w-[57%] w-full items-center lg:items-end">
                             <Fade
                                 direction="up"
                                 delay={0.1}
@@ -35,7 +35,6 @@ export default function Ceo() {
                             </div>
                             <Fade direction="right">
                                 <Image
-                                    className="mx-auto"
                                     src={`/images/${theme}/signature.png`}
                                     alt="grid"
                                     width={494}
@@ -49,14 +48,6 @@ export default function Ceo() {
                             className="relative rounded-xl h-auto w-full lg:w-[43%] aspect-[0.72] overflow-hidden"
                         >
                             <Image src={"/images/ceo.png"} alt="ceo" fill />
-                            {/* <div className="absolute font-mont text-white bottom-10 right-10">
-                                <div className="text-big">
-                                    {t("ceo.name").toUpperCase()}
-                                </div>
-                                <div className="text-[10px]">
-                                    {t("ceo.position").toUpperCase()}
-                                </div>
-                            </div> */}
                         </Fade>
                     </div>
                 </div>
