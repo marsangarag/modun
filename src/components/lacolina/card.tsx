@@ -11,11 +11,12 @@ export default function ColinaCard({
     pos: "left" | "right";
 }) {
     const { t } = useTranslation("lacolina");
+
     return (
         <Fade
             direction={pos}
             delay={0.1}
-            className={`my-col-5 md:flex-row justify-between items-stretch border-0 md:border-[5px] colina-border`}
+            className={`my-col-5 main-width md:flex-row justify-between items-stretch border-0 md:border-[5px] colina-border`}
         >
             <div className="w-full my-col-5 md:my-col-10 p-5 md:p-10 colina-border md:border-0">
                 <div className="font-mont text-big font-medium text-center">

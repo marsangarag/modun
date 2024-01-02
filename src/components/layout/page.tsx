@@ -5,6 +5,7 @@ import Footer from "./footer";
 
 export default function Page({ children }: { children: any }) {
     const router = useRouter();
+    const hasNoFooter = router.pathname === "/business";
 
     return (
         <div className="w-screen min-h-screen relative">
@@ -18,7 +19,7 @@ export default function Page({ children }: { children: any }) {
                 className={`pt-20`}
             >
                 {children}
-                <Footer />
+                {hasNoFooter ? null : <Footer />}
             </motion.div>
         </div>
     );

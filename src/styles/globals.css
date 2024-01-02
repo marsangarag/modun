@@ -386,15 +386,15 @@ video {
 }
 
 .react-slideshow-container + .indicators {
-    @apply absolute left-1/2 -translate-x-1/2 bottom-4 md:bottom-8 m-0 !important;
+    @apply absolute left-1/2 -translate-x-1/2 bottom-4 lg:bottom-8 m-0 !important;
 }
 
 .react-slideshow-container + ul.indicators li {
-    @apply px-2 md:px-4 last:px-0 !important;
+    @apply px-2 lg:px-4 last:px-0 !important;
 }
 
 .react-slideshow-container + .indicators li button::before {
-    @apply w-2.5 h-2.5 md:w-5 md:h-5 bg-white rounded-full !important;
+    @apply w-2.5 h-2.5 lg:w-5 lg:h-5 bg-white rounded-full !important;
 }
 
 .react-slideshow-container + ul.indicators .each-slideshow-indicator {

@@ -39,17 +39,17 @@ export default function BusinessPage() {
                     onStartChange={(firstIndex, lastIndex) => {
                         setDirection(
                             lastIndex > firstIndex
-                                ? lastIndex === 0 && firstIndex === 6
+                                ? lastIndex === 0 && firstIndex === 5
                                     ? "left"
                                     : "right"
-                                : firstIndex === 6
+                                : firstIndex === 5
                                 ? "right"
                                 : "left"
                         );
                         setSelected(businesses[lastIndex]);
                     }}
                     cssClass="relative"
-                    duration={10000}
+                    autoplay={false}
                     transitionDuration={500}
                     easing="ease"
                     indicators
@@ -59,7 +59,7 @@ export default function BusinessPage() {
                             key={business.slug}
                             className="w-screen h-full aspect-[2] md:aspect-[2.5]"
                             style={{
-                                backgroundImage: `url(/images/business/${business.img}.png)`,
+                                backgroundImage: `url(/images/business/${business.img}/banner.png)`,
                                 backgroundSize: "cover",
                                 backgroundPosition: "center center",
                                 backgroundAttachment: "fixed",
@@ -78,16 +78,18 @@ export default function BusinessPage() {
                         {t(`${selected.img}.title`)}
                     </Fade>
                     <Fade
-                        delay={0.2}
                         direction={direction}
                         myKey={selected.img}
-                        className="text-justify text-sm"
+                        className="text-justify relative text-sm"
                     >
+                        <div className="absolute hidden sm:block -left-5 top-2 bg-blue w-0.5 h-[calc(100%-12px)]"></div>
                         {parse(t(`${selected.img}.description`))}
                     </Fade>
                 </div>
-                {selected?.content ? <selected.content /> : null}
             </div>
+            <Fade myKey={selected.img} direction={direction}>
+                {selected?.content ? <selected.content /> : null}
+            </Fade>
         </>
     );
 }
@@ -98,6 +100,7 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
             "header",
             "footer",
             "business",
+            "home",
         ])),
     },
 });

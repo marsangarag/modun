@@ -11,27 +11,30 @@ export default function NewsDetailCard({ data }: { data: NewsCardType }) {
 
     return (
         <div className="my-col-10 md:gap-y-20 border-b border-blue pb-14 md:pb-48">
-            <Fade
-                direction="right"
-                className={`relative w-full h-auto aspect-[1.5] ${
-                    theme === "light"
-                        ? "md:news-border border-0"
-                        : "border-blue border-2"
-                }`}
-            >
-                <Image
-                    src={`/images/news/${data?.img}.png`}
-                    alt={`business-${data?.img}-image`}
-                    fill
-                />
-                <Image
-                    src={`/icons/gradientgrid.svg`}
-                    alt="grid"
-                    width={100}
-                    height={500}
-                    className="hidden md:block right-0 absolute h-full"
-                />
-            </Fade>
+            <div className="w-screen relative aspect-[2.66] h-auto">
+                <Fade
+                    direction="right"
+                    className={`relative main-width h-auto aspect-[1.5] ${
+                        theme === "light"
+                            ? "md:news-border border-0"
+                            : "border-blue border-2"
+                    }`}
+                >
+                    <Image
+                        src={`/images/news/${data?.img}.png`}
+                        alt={`business-${data?.img}-image`}
+                        fill
+                    />
+                </Fade>
+                <div className="absolute opacity-50 -z-10 left-0 top-1/2 -translate-y-1/2 h-full w-1/4 rotate-180">
+                    <Image src={`/icons/news-grid.svg`} alt="grid" fill />
+                </div>
+                <div className="absolute opacity-50 -z-10 right-0 top-1/2 -translate-y-1/2 h-full w-1/4 ">
+                    <Image src={`/icons/news-grid.svg`} alt="grid" fill />
+                </div>
+                <div className="absolute center w-full text-center my-col-5"></div>
+            </div>
+
             <div className="main-width">
                 <div className="my-col-10 md:gap-y-[50px]">
                     <Fade

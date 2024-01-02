@@ -10,17 +10,17 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 export default function LaColinaPage() {
     return (
         <>
-            <video className="-mt-20" loop autoPlay muted playsInline>
+            {/* <video className="-mt-20" loop autoPlay muted playsInline>
                 <source src="/video/lacolina.mp4" />
-            </video>
+            </video> */}
             {/* <LacolinaHero /> */}
             <ColinaIntro />
             <Rooms />
-            <div className="main-width my-col-10 md:gap-y-20">
+            <div className=" my-col-10 md:gap-y-20">
                 <ColinaCard pos="right" myKey="time" />
                 <Advantages />
-                <ColinaCard pos="left" myKey="eco" />
-                <ColinaCard pos="right" myKey="luxury" />
+                <ColinaCard pos="right" myKey="eco" />
+                <ColinaCard pos="left" myKey="luxury" />
                 <Brands />
                 <Contacts />
             </div>

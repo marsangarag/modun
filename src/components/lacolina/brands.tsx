@@ -19,7 +19,7 @@ export default function Brands() {
     const { theme } = useThemeSwitcher();
 
     return (
-        <div className="my-col-10 md:gap-y-20">
+        <div className="my-col-10 main-width md:gap-y-20">
             <TitleAnimation
                 className="font-extrabold"
                 lacolina

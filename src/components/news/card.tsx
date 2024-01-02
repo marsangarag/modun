@@ -9,9 +9,11 @@ import { useThemeSwitcher } from "@/lib/helper";
 export default function NewsPageCard({
     index,
     data,
+    detail,
 }: {
     index: number;
     data: NewsCardType;
+    detail?: boolean;
 }) {
     const router = useRouter();
     const { t } = useTranslation("news");
@@ -25,12 +27,12 @@ export default function NewsPageCard({
         <Fade
             direction={index % 2 === 0 ? "left" : "right"}
             delay={index * 0.1}
-            className="my-col-10 md:flex-row items-stretch gap-x-20 justify-between"
+            className="my-col-10 md:flex-row items-stretch gap-20 justify-between"
         >
             <div
                 className={`relative h-auto w-full md:w-1/2 aspect-[1.78] ${
                     theme === "light"
-                        ? "md:news-border border-0"
+                        ? "news-border border-2"
                         : "border-blue border-2"
                 }`}
             >

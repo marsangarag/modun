@@ -6,7 +6,7 @@ import { Address, Call, FacebookGrad, Mail } from "../icons";
 export default function Contacts() {
     const { t } = useTranslation("lacolina");
     return (
-        <div className="my-col-10 md:gap-y-20">
+        <div className="my-col-10 main-width md:gap-y-20">
             <TitleAnimation lacolina text={t("contacts.title").toUpperCase()} />
             <div className="my-col-5 md:flex-row justify-between items-stretch border-0 md:border-[5px] colina-border">
                 <div

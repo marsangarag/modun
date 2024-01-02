@@ -1,4 +1,9 @@
+import Borolzoi from "@/components/business/borolzoi";
+import Construction from "@/components/business/construction";
+import Gallery from "@/components/business/gallery";
 import MainBusiness from "@/components/business/main";
+import Mongolians from "@/components/business/mongolians";
+import Tower from "@/components/business/tower";
 
 export const routerStack = ["/", "/business", "/news", "/hr", "/lacolina"];
 
@@ -14,33 +19,35 @@ export const businesses = [
         content: MainBusiness,
     },
     {
-        slug: "art-gallery",
-        img: "gallery",
-        content: "",
+        slug: "borolzoi",
+        img: "borolzoi",
+        content: Borolzoi,
     },
     {
         slug: "mongolians",
         img: "mongolians",
-        content: "",
-    },
-    {
-        slug: "moden-tower",
-        img: "tower",
-        content: "",
+        content: Mongolians,
     },
     {
         slug: "modun-construction",
         img: "construction",
-        content: "",
+        content: Construction,
     },
     {
-        slug: "borolzoi",
-        img: "borolzoi",
-        content: "",
+        slug: "art-gallery",
+        img: "gallery",
+        content: Gallery,
     },
+
     {
-        slug: "lacolina",
-        img: "lacolina",
-        content: "",
+        slug: "moden-tower",
+        img: "tower",
+        content: Tower,
     },
+
+    // {
+    //     slug: "lacolina",
+    //     img: "lacolina",
+    //     content: "",
+    // },
 ];
