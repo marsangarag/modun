@@ -133,10 +133,6 @@ export default function Footer() {
                     </div>
                 ))}
             </div>
-
-            {/* <div className="bg-blue text-center font-light text-sm py-2.5 md:py-5 lg:py-10">
-                Модун групп 2023
-            </div> */}
         </footer>
     );
 }

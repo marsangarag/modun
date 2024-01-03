@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import parse from "html-react-parser";
+import BusinessFooter from "@/components/business/footer";
 
 export default function BusinessPage() {
     const { t } = useTranslation("business");
@@ -49,7 +50,7 @@ export default function BusinessPage() {
                         setSelected(businesses[lastIndex]);
                     }}
                     cssClass="relative"
-                    autoplay={false}
+                    duration={20000}
                     transitionDuration={500}
                     easing="ease"
                     indicators
@@ -90,6 +91,7 @@ export default function BusinessPage() {
             <Fade myKey={selected.img} direction={direction}>
                 {selected?.content ? <selected.content /> : null}
             </Fade>
+            <BusinessFooter slug={selected.slug} />
         </>
     );
 }
