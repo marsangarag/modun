@@ -60,7 +60,7 @@ export default function LacolinaComponent() {
                                                     <div
                                                         onClick={() =>
                                                             router.push(
-                                                                "/lacolina"
+                                                                "/la-colina"
                                                             )
                                                         }
                                                         className="bg-blue/75 font-mont cursor-pointer rounded-full py-2.5 px-5 cursor pointer text-[15px]"

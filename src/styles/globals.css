@@ -445,3 +445,15 @@ img {
     padding-left: 8.35% !important;
     padding-right: 8.35% !important;
 }
+
+.react-horizontal-scrolling-menu--arrow-left {
+    @apply absolute z-10 rotate-180 left-0 top-1/2 -translate-y-1/2 h-auto w-[4%] aspect-[0.34];
+}
+
+.react-horizontal-scrolling-menu--arrow-right {
+    @apply absolute z-10 right-0 top-1/2 -translate-y-1/2 h-auto w-[4%] aspect-[0.34];
+}
+
+.react-horizontal-scrolling-menu--wrapper {
+    @apply relative !important;
+}

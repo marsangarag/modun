@@ -1,23 +1,13 @@
 import Image from "next/image";
 import TitleAnimation from "../animations/title";
-import { ContextType } from "react";
+import { ContextType, useState } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import useDrag from "@/lib/helper/useDrag";
-
-type scrollVisibilityApiType = ContextType<typeof VisibilityContext>;
+import Ticker from "framer-motion-ticker";
 
 export default function Mongolians() {
-    const { dragStart, dragStop, dragMove, dragging } = useDrag();
-
-    const handleDrag =
-        ({ scrollContainer }: scrollVisibilityApiType) =>
-        (ev: React.MouseEvent) =>
-            dragMove(ev, (posDiff) => {
-                if (scrollContainer.current) {
-                    scrollContainer.current.scrollLeft += posDiff;
-                }
-            });
+    const [isPlaying, setIsPlaying] = useState<boolean>(true);
 
     return (
         <>
@@ -54,28 +44,33 @@ export default function Mongolians() {
                     className="font-extrabold text-big"
                 />
             </div>
-            <div onMouseLeave={dragStop} className="cursor-grab my-10">
-                <ScrollMenu
-                    onMouseDown={() => dragStart}
-                    onMouseMove={handleDrag}
-                    onMouseUp={() => dragStop}
+            <div className="my-10">
+                <Ticker
+                    isPlaying={isPlaying}
+                    onMouseEnter={() => setIsPlaying(false)}
+                    onMouseLeave={() => setIsPlaying(true)}
+                    duration={80}
                 >
                     {Array.from({ length: 12 }).map((_, index: number) => {
                         return (
-                            <Image
-                                src={`/images/business/mongolians/${
-                                    index + 3
-                                }.png`}
-                                alt={`${index}-hool`}
-                                width={400}
-                                height={350}
-                                className="aspect-auto object-cover min-h-[350px] max-h-[350px] cursor-grab min-w-[350px] md:min-w-[427px] "
+                            <div
                                 key={index}
-                            />
+                                className="aspect-auto h-[350px] min-h-[350px] max-h-[350px]"
+                            >
+                                <img
+                                    className="object-cover"
+                                    src={`/images/business/mongolians/${
+                                        index + 3
+                                    }.png`}
+                                    height={350}
+                                    alt={`logo-${index + 1}`}
+                                />
+                            </div>
                         );
                     })}
-                </ScrollMenu>
+                </Ticker>
             </div>
+
             <div className="my-col-5 lg:gap-y-10 main-width">
                 <TitleAnimation
                     text="ӨВ УЛАМЖЛАЛАА ШИНГЭЭСЭН"

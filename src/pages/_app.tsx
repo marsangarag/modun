@@ -1,6 +1,6 @@
 import Page from "@/components/layout/page";
 import "@/styles/globals.css";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, MotionConfig } from "framer-motion";
 import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";
 import type { AppProps } from "next/app";

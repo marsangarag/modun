@@ -4,13 +4,14 @@ import Image from "next/image";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import "react-horizontal-scrolling-menu/dist/styles.css";
 import useDrag from "@/lib/helper/useDrag";
-import { ContextType } from "react";
+import { ContextType, useContext } from "react";
+import { motion } from "framer-motion";
 
 type scrollVisibilityApiType = ContextType<typeof VisibilityContext>;
 
 export default function Rooms() {
     const { t } = useTranslation("lacolina");
-    const { dragStart, dragStop, dragMove, dragging } = useDrag();
+    const { dragStart, dragStop, dragMove } = useDrag();
 
     const handleDrag =
         ({ scrollContainer }: scrollVisibilityApiType) =>
@@ -34,6 +35,8 @@ export default function Rooms() {
                     className="mt-10 mb-20 cursor-grab"
                 >
                     <ScrollMenu
+                        LeftArrow={LeftArrow}
+                        RightArrow={RightArrow}
                         onMouseDown={() => dragStart}
                         onMouseMove={handleDrag}
                         onMouseUp={() => dragStop}
@@ -54,5 +57,59 @@ export default function Rooms() {
                 </div>
             </div>
         </>
+    );
+}
+
+function LeftArrow() {
+    const { initComplete, isFirstItemVisible, scrollPrev } =
+        useContext(VisibilityContext);
+
+    return (
+        <Arrow
+            disabled={!initComplete || (initComplete && isFirstItemVisible)}
+            onClick={() => scrollPrev()}
+            testId="left-arrow"
+        />
+    );
+}
+
+function RightArrow() {
+    const { initComplete, isLastItemVisible, scrollNext } =
+        useContext(VisibilityContext);
+
+    return (
+        <Arrow
+            disabled={initComplete && isLastItemVisible}
+            onClick={() => scrollNext()}
+            testId="right-arrow"
+        />
+    );
+}
+
+function Arrow({
+    disabled,
+    onClick,
+    testId,
+}: {
+    disabled: boolean;
+    onClick: VoidFunction;
+    testId: String;
+}) {
+    return (
+        <motion.div
+            initial={{
+                opacity: disabled ? 0 : 1,
+                display: disabled ? "none" : "block",
+            }}
+            animate={{
+                opacity: disabled ? 0 : 1,
+                display: disabled ? "none" : "block",
+            }}
+            onClick={onClick}
+            className="cursor-pointer"
+            data-testid={testId}
+        >
+            <Image src={"/icons/arrow.svg"} alt="prev-arrow" fill />
+        </motion.div>
     );
 }

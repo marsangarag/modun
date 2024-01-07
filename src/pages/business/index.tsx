@@ -50,7 +50,8 @@ export default function BusinessPage() {
                         setSelected(businesses[lastIndex]);
                     }}
                     cssClass="relative"
-                    duration={20000}
+                    autoplay={false}
+                    // duration={20000}
                     transitionDuration={500}
                     easing="ease"
                     indicators

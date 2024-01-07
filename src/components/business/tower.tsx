@@ -1,11 +1,12 @@
 import Image from "next/image";
+import TitleAnimation from "../animations/title";
 
 export default function Tower() {
     return (
         <div className="main-width my-col-5 lg:gap-y-10">
-            <div className="relative w-full aspect-[3.6]">
+            {/* <div className="relative w-full aspect-[3.6]">
                 <Image src={"/images/business/tower/0.png"} alt="0" fill />
-            </div>
+            </div> */}
             <div className="my-col-5 md:flex-row">
                 <div className="w-full md:w-3/5 relative aspect-[1.9]">
                     <Image src={"/images/business/tower/1.png"} alt="1" fill />
@@ -24,9 +25,13 @@ export default function Tower() {
                 <div className="w-full relative aspect-[1.3]">
                     <Image src={"/images/business/tower/5.png"} alt="5" fill />
                 </div>
+            </div>
+            <TitleAnimation text="ХУДАЛДАА, ҮЙЛЧИЛГЭЭНИЙ ТАЛБАЙ ХУДАЛДАХ БОЛОН ТҮРЭЭСЛҮҮЛНЭ" />
+            <div className="my-col-5 md:grid grid-cols-2 gap-5">
                 <div className="w-full relative aspect-[1.3]">
                     <Image src={"/images/business/tower/6.png"} alt="6" fill />
                 </div>
+
                 <div className="w-full relative aspect-[1.3]">
                     <Image src={"/images/business/tower/7.png"} alt="7" fill />
                 </div>

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import TitleAnimation from "../animations/title";
+import Fade from "../animations/fade";
 
 export default function MainBusiness() {
     return (
@@ -21,7 +22,10 @@ export default function MainBusiness() {
                     className="font-extrabold text-big"
                 />
                 <div className="my-col-5 md:gap-y-10 xl:gap-y-0">
-                    <div className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10">
+                    <Fade
+                        direction="right"
+                        className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10"
+                    >
                         <div className="relative w-full md:w-3/5 h-auto aspect-[1.5]">
                             <Image
                                 src={"/images/business/modun/0.png"}
@@ -57,8 +61,11 @@ export default function MainBusiness() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10">
+                    </Fade>
+                    <Fade
+                        direction="left"
+                        className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10"
+                    >
                         <div className="relative -order-1 md:order-1 w-full md:w-3/5 h-auto aspect-[1.5]">
                             <Image
                                 src={"/images/business/modun/1.png"}
@@ -95,8 +102,11 @@ export default function MainBusiness() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10">
+                    </Fade>
+                    <Fade
+                        direction="right"
+                        className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10"
+                    >
                         <div className="relative w-full md:w-3/5 h-auto aspect-[1.5]">
                             <Image
                                 src={"/images/business/modun/2.png"}
@@ -132,8 +142,11 @@ export default function MainBusiness() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10">
+                    </Fade>
+                    <Fade
+                        direction="left"
+                        className="my-col-5 md:flex-row items-stretch md:items-center gap-x-10 xl:-mt-10"
+                    >
                         <div className="relative -order-1 md:order-1 w-full md:w-3/5 h-auto aspect-[1.5]">
                             <Image
                                 src={"/images/business/modun/3.png"}
@@ -172,7 +185,7 @@ export default function MainBusiness() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </Fade>
                 </div>
             </div>
         </>

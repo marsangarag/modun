@@ -13,13 +13,13 @@ export default function Contacts() {
                     className={`h-auto aspect-[2] relative w-full -my-[5px] -ml-[5px]`}
                 >
                     <Image
-                        src={`/images/lacolina/hr.png`}
+                        src={`/images/lacolina/eco.png`}
                         alt={`contacts-image`}
                         fill
                         className={`object-cover`}
                     />
                     <div className="absolute w-full h-full inset-0 bg-white/[0.35]"></div>
-                    <div className="absolute center text-colina text-center w-full">
+                    <div className="absolute center text-white text-center w-full">
                         <div className="lustria text-biggest">La Colina</div>
                         <div className="font-mont -mt-5 text-big">хотхон</div>
                     </div>

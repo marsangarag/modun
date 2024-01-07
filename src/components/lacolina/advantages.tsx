@@ -1,5 +1,4 @@
 import { useTranslation } from "next-i18next";
-import TitleAnimation from "../animations/title";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCoverflow, Navigation, Pagination } from "swiper";
 import "swiper/css";
@@ -23,15 +22,21 @@ export default function Advantages() {
             </div>
             <div className="w-full mx-auto h-full overflow-hidden">
                 <Swiper
-                    modules={[Autoplay, Pagination, EffectCoverflow]}
+                    modules={[
+                        Autoplay,
+                        Pagination,
+                        EffectCoverflow,
+                        Navigation,
+                    ]}
                     effect="coverflow"
                     className="mb-10 relative"
                     slidesPerView={3}
                     grabCursor
+                    navigation
                     spaceBetween={-100}
                     pagination={{ clickable: true }}
                     centeredSlides
-                    autoplay={{ delay: 10000, disableOnInteraction: true }}
+                    autoplay={{ delay: 5000, disableOnInteraction: true }}
                     edgeSwipeDetection="prevent"
                     coverflowEffect={{
                         slideShadows: false,
@@ -44,8 +49,6 @@ export default function Advantages() {
                     }
                     loop
                 >
-                    {/* <div className="absolute top-0 left-0 h-full w-1/4 bg-gradient-to-r from-white to-transparent z-50"></div> */}
-                    {/* <div className="absolute top-0 right-0 h-full w-1/4 bg-gradient-to-l from-white to-transparent z-50"></div> */}
                     {Array.from({ length: 18 }).map((card, index) => {
                         return (
                             <SwiperSlide

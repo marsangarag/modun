@@ -13,10 +13,10 @@ export default function HR() {
                 alt="grid"
                 width={100}
                 height={500}
-                className="hidden md:block right-0 top-1/2 -translate-y-1/2 absolute w-auto self-stretch overflow-hidden h-[110%] aspect-[0.58]"
+                className="hidden md:block left-[85%] top-1/2 -translate-y-1/2 absolute w-auto self-stretch overflow-hidden h-[110%] aspect-[0.58]"
             />
-            <div className="flex flex-col main-width overflow-y-visible md:flex-row md:items-center w-full md:w-5/6">
-                <div className="w-full max-w-[50%] relative h-full aspect-[1.12]">
+            <div className="flex flex-col main-width overflow-y-visible md:flex-row md:items-center md:w-5/6">
+                <div className="w-full md:max-w-[50%] relative h-full aspect-[1.12]">
                     <Image
                         src={"/images/hr.png"}
                         alt="hr"
@@ -24,7 +24,7 @@ export default function HR() {
                         fill
                     />
                 </div>
-                <div className="relative w-full max-w-[50%] h-full py-10 md:py-0">
+                <div className="relative w-full md:max-w-[50%] h-full py-10 md:py-0">
                     <div className="my-col-5 lg:gap-y-10 w-4/5 lg:w-full mx-auto lg:ml-[8%]">
                         <div className="text-big font-bold text-blue w-full text-center">
                             {t("hr.caption").toUpperCase()}

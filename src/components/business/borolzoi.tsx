@@ -19,7 +19,7 @@ export default function Borolzoi() {
                     <div>·Мэргэн (XV-018305)</div>
                     <div>·Геологи хайгуул-өрөмдлөгийн баг</div>
                 </div>
-                <div className="relative w-full aspect-[1.8] h-auto">
+                <div className="relative w-full aspect-[2] h-auto">
                     <Image
                         src={"/images/business/borolzoi/0.png"}
                         alt="intro-bg"
@@ -45,7 +45,7 @@ export default function Borolzoi() {
                 text="МЭНДЧИЛГЭЭ"
                 className="font-extrabold text-big"
             />
-            <div className="my-col-10 md:flex-row gap-x-10 items-center">
+            <div className="my-col-10 md:flex-row gap-x-10 items-start">
                 <div className="my-col-5 h-full w-full md:w-2/5 justify-between items-start">
                     <div className="relative w-full aspect-[0.8] h-auto">
                         <Image
@@ -54,12 +54,12 @@ export default function Borolzoi() {
                             fill
                         />
                     </div>
-                    <div>
+                    <div className="font-mont">
                         <div className="font-extralight">ЕРӨНХИЙ ГЕОЛОГИЧ</div>
                         <div className="font-bold">Ц. ЭНХБАТ</div>
                     </div>
                 </div>
-                <div className="text-justify text-sm w-full md:w-3/5">
+                <div className="text-justify text-sm md:text-base lg:text-big w-full md:w-3/5">
                     Миний бие Модун группын салбар компани болох Боролзой ХХК-д
                     2011 оноос эхлэн ерөнхий геологчоор ажиллаж байна. Энэ
                     хугацаанд Боролзой компани нь Дундговь, Говь-Алтай, Завхан,

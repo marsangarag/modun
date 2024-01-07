@@ -4,20 +4,20 @@ import TitleAnimation from "../animations/title";
 export default function Construction() {
     return (
         <div className="main-width my-col-5 lg:gap-y-10">
-            <div className="my-col-5 md:flex-row gap-x-10">
+            <div className="my-col-5 md:flex-row gap-x-5">
                 <div className="my-col-5 justify-between w-full md:w-3/5">
                     <div className="flex flex-col order-1 md:-order-1">
                         <div className="text-big font-bold">ЛАБОРАТОРИ</div>
-                        <div className="relative text-justify text-big">
+                        <div className="relative text-justify">
                             <div className="absolute hidden sm:block -left-5 top-2 bg-blue w-0.5 h-[calc(100%-12px)]"></div>
                             Тус үйлдвэрийн дэргэд нь бетоны маркыг бүрэн
                             тодорхойлох хүчин чадалтай иж бүрэн лаборатори
                             ажиллаж байна.
                         </div>
                     </div>
-                    <div className="w-full relative aspect-[2.2]">
+                    <div className="w-full relative aspect-[1.5]">
                         <Image
-                            src={"/images/business/construction/0.png"}
+                            src={"/images/business/construction/5.png"}
                             alt="0"
                             fill
                         />
@@ -30,6 +30,13 @@ export default function Construction() {
                         fill
                     />
                 </div>
+            </div>
+            <div className="w-full relative aspect-[2.2]">
+                <Image
+                    src={"/images/business/construction/0.png"}
+                    alt="0"
+                    fill
+                />
             </div>
             <div className="w-full relative aspect-[2.8]">
                 <Image

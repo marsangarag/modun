@@ -8,7 +8,7 @@ import TitleAnimation from "@/components/animations/title";
 export default function HR() {
     const { t } = useTranslation("hr");
     const getPhoneNo = () => {
-        return Math.random() < 0.5 ? "88114682" : "80114682";
+        return Math.random() < 0.5 ? "88114682" : "99097716";
     };
     return (
         <div className="my-col-10 md:gap-y-24 pb-10 md:pb-24">
@@ -42,7 +42,7 @@ export default function HR() {
                             width={24}
                             height={24}
                         />
-                        <div>88114682, 80114682</div>
+                        <div>88114682, 99097716</div>
                     </a>
                     <a
                         href={`mailto:hr@modungroup.mn`}

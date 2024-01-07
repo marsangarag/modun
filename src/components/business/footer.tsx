@@ -11,6 +11,49 @@ export default function BusinessFooter({ slug }: { slug: string }) {
     const [hoveredIcon, setHoveredIcon] = useState<number | null>(null);
     const [logoHover, setLogoHover] = useState<boolean | null>(false);
 
+    const getInfo = () => {
+        switch (slug) {
+            case "modun":
+                return {
+                    facebook: "https://www.facebook.com/modungroup",
+                    address:
+                        "Улаанбаатар хот, Хан-Уул дүүрэг, 21-р хороо, Архивчдын гудамж, Ла Колина 447, 1 давхар",
+                };
+            case "mongolians":
+                return {
+                    phoneNo: "7010-4682, 9999-4682",
+                    facebook: "https://www.facebook.com/mongolians2",
+                    address:
+                        "Сүхбаатар дүүрэг, Олимпын гудамж, Shangri-La Mall, 4 давхар",
+                    text: "ХОЛБОО БАРИХ",
+                    mail: "mongoliansrestaurant@gmail.com",
+                };
+            case "gallery":
+                return {
+                    facebook: "https://www.facebook.com/mongoliamuseumofart",
+                    phoneNo: "1146-1146, 9909-7716",
+                    address:
+                        "Улаанбаатар хот, Хан-Уул дүүрэг, 21-р хороо, Архивчдын гудамж, Ла Колина 447, 1 давхар",
+                };
+            case "tower":
+                return {
+                    phoneNo: "9191-7716, 8811-4682",
+                    facebook: "https://www.facebook.com/barilgastore",
+                    address:
+                        "Баянзүрх дүүрэг, 1-р хороо, Их Тойруу гудамж, Барилга Мега Стор төв",
+                    text: "ҮЙЛЧИЛГЭЭНИЙ ТАЛБАЙ ТҮРЭЭСЛЭХ, ХУДАЛДАХ АЛБА",
+                };
+            default:
+                return {
+                    phoneNo: "1146-1146, 9909-7716",
+                    facebook: "https://www.facebook.com/modungroup",
+                    address:
+                        "Улаанбаатар хот, Хан-Уул дүүрэг, 21-р хороо, Архивчдын гудамж, Ла Колина 447, 1 давхар",
+                    text: null,
+                };
+        }
+    };
+
     const icons = [
         {
             icon: Instagram,
@@ -18,7 +61,7 @@ export default function BusinessFooter({ slug }: { slug: string }) {
         },
         {
             icon: Facebook,
-            route: "https://www.facebook.com/modungroup",
+            route: getInfo().facebook || "https://www.facebook.com/modungroup",
         },
         {
             icon: Youtube,
@@ -29,32 +72,6 @@ export default function BusinessFooter({ slug }: { slug: string }) {
             route: "https://www.facebook.com/modungroup",
         },
     ];
-
-    const getInfo = () => {
-        switch (slug) {
-            case "mongolians":
-                return {
-                    phoneNo: "7010-4682, 9999-4682",
-                    address:
-                        "Сүхбаатар дүүрэг, Олимпын гудамж, Shangri-La Mall, 4 давхар",
-                    text: "ХОЛБОО БАРИХ",
-                };
-            case "tower":
-                return {
-                    phoneNo: "9191-7716, 8811-4682",
-                    address:
-                        "Баянзүрх дүүрэг, 1-р хороо, Их Тойруу гудамж, Барилга Мега Стор төв",
-                    text: "ҮЙЛЧИЛГЭЭНИЙ ТАЛБАЙ ТҮРЭЭСЛЭХ, ХУДАЛДАХ АЛБА",
-                };
-            default:
-                return {
-                    phoneNo: "1146-1146, 9909-7716",
-                    address:
-                        "Улаанбаатар хот, Хан-Уул дүүрэг, 21-р хороо, Архивчдын гудамж, Ла Колина 447, 1 давхар",
-                    text: null,
-                };
-        }
-    };
 
     const onSocialMediaClick = (route: string) => {
         window.open(route, "_blank");
@@ -93,7 +110,7 @@ export default function BusinessFooter({ slug }: { slug: string }) {
                 )}
 
                 <a
-                    href={`tel:+976 ${getInfo().phoneNo.split(", ")[0]}`}
+                    href={`tel:+976 ${getInfo()?.phoneNo?.split(", ")[0]}`}
                     className="flex gap-x-2.5"
                 >
                     <Image
@@ -106,7 +123,7 @@ export default function BusinessFooter({ slug }: { slug: string }) {
                     +976 {getInfo().phoneNo}
                 </a>
                 <a
-                    href={`mailto:info@modungroup.mn`}
+                    href={`mailto:${getInfo().mail || "info@modungroup.mn"}`}
                     className="flex gap-x-2.5 "
                 >
                     <Image
@@ -116,7 +133,7 @@ export default function BusinessFooter({ slug }: { slug: string }) {
                         width={24}
                         height={24}
                     />
-                    <div>info@modungroup.mn</div>
+                    <div>{getInfo().mail || "info@modungroup.mn"}</div>
                 </a>
                 <div className="flex gap-x-2.5 items-center">
                     <div className="flex-shrink-0">
